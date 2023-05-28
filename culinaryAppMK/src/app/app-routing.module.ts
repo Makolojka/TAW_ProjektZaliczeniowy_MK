@@ -6,6 +6,8 @@ import {
 } from "./components/culinary-recipe-item-details/culinary-recipe-item-details.component";
 import {UserRecipesComponent} from "./components/user-recipes/user-recipes.component";
 import {AuthGuard} from "./services/auth.guard";
+import {LoginComponent} from "./components/login/login.component";
+import {SignupComponent} from "./components/signup/signup.component";
 
 const routes: Routes = [
   {
@@ -20,6 +22,14 @@ const routes: Routes = [
     path: 'userRecipes',
     component: UserRecipesComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   }
 
 ];

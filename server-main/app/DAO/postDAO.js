@@ -8,11 +8,11 @@ const postSchema = new mongoose.Schema({
     image: {type: String},
     text: {type: String},
 }, {
-    collection: 'post'
+    collection: 'culinary_recipe'
 });
 postSchema.plugin(uniqueValidator);
 
-const PostModel = mongoose.model('post', postSchema);
+const PostModel = mongoose.model('culinary_recipe', postSchema);
 
 async function query() {
     const result = await PostModel.find({});
