@@ -3,3 +3,13 @@
   background-color: rgb(71, 161, 48);
   color: white;
 }
+
+.spacer
+{
+  flex: 1 1 auto;
+}
+
+.margin-right
+{
+  margin-right: 1em;
+}
