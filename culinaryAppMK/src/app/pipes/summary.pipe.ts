@@ -12,3 +12,4 @@ export class SummaryPipe implements PipeTransform {
     return value.substr(0, limit) + '...';
   }
 }
+

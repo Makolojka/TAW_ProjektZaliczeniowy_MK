@@ -11,6 +11,11 @@ import { CulinaryRecipeItemTextComponent } from './components/culinary-recipe-it
 import { CulinaryRecipeItemImageComponent } from './components/culinary-recipe-item-image/culinary-recipe-item-image.component';
 import { CulinaryRecipeItemDetailsComponent } from './components/culinary-recipe-item-details/culinary-recipe-item-details.component';
 import { SummaryPipe } from './pipes/summary.pipe';
+import { UserRecipesComponent } from './components/user-recipes/user-recipes.component';
+import { SearchBarComponent } from './shared/search-bar/search-bar.component';
+import {FormsModule} from "@angular/forms";
+import { FilterTextPipe } from './pipes/filter-text.pipe';
+import { TextFormatDirective } from './directives/text-format.directive';
 
 @NgModule({
   declarations: [
@@ -20,12 +25,17 @@ import { SummaryPipe } from './pipes/summary.pipe';
     CulinaryRecipeItemTextComponent,
     CulinaryRecipeItemImageComponent,
     CulinaryRecipeItemDetailsComponent,
-    SummaryPipe
+    SummaryPipe,
+    UserRecipesComponent,
+    SearchBarComponent,
+    FilterTextPipe,
+    TextFormatDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     DataService

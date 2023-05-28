@@ -1,0 +1,6 @@
+<search-bar (name)="getName($event)"></search-bar>
+<div *ngFor="let item of items$ | filter:filterText" >
+  <culinary-recipe [image]="item.image" [text]="item.text" [id]="item.id">
+  </culinary-recipe>
+</div>
+

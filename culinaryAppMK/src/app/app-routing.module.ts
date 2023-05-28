@@ -4,6 +4,7 @@ import {MainPageComponent} from "./components/main-page/main-page.component";
 import {
   CulinaryRecipeItemDetailsComponent
 } from "./components/culinary-recipe-item-details/culinary-recipe-item-details.component";
+import {UserRecipesComponent} from "./components/user-recipes/user-recipes.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'recipe/detail/:id',
     component: CulinaryRecipeItemDetailsComponent
+  },
+  {
+    path: 'userRecipes',
+    component: UserRecipesComponent
   }
 
 ];

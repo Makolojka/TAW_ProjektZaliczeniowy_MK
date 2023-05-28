@@ -7,18 +7,19 @@ import { DataService } from '../../services/data.service';
 })
 export class MainPageComponent implements OnInit{
   public items$: any;
+  public filterText: string = '';
 
   constructor(private service: DataService) {
   }
 
   ngOnInit() {
-    this.getAll();
+    // this.getAll();
   }
 
-  getAll(){
-    this.service.getAll().subscribe(response => {
-      this.items$ = response;
-    });
-  }
+  // getAll(){
+  //   this.service.getAll().subscribe(response => {
+  //     this.items$ = response;
+  //   });
+  // }
 
 }
