@@ -19,5 +19,10 @@ const postEndpoint = (router) => {
         }
     });
 
+    router.get('/api/post/:id', async (request, response, next) => {
+        let result = await business.getPostManager().query();
+        response.status(200).send(result.find(obj => obj.id === request.params.id));
+    });
+
 };
 export default postEndpoint;

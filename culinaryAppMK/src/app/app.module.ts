@@ -7,12 +7,20 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import {HttpClientModule} from "@angular/common/http";
 import {DataService} from "./services/data.service";
 import { CulinaryRecipeComponent } from './components/culinary-recipe/culinary-recipe.component';
+import { CulinaryRecipeItemTextComponent } from './components/culinary-recipe-item-text/culinary-recipe-item-text.component';
+import { CulinaryRecipeItemImageComponent } from './components/culinary-recipe-item-image/culinary-recipe-item-image.component';
+import { CulinaryRecipeItemDetailsComponent } from './components/culinary-recipe-item-details/culinary-recipe-item-details.component';
+import { SummaryPipe } from './pipes/summary.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    CulinaryRecipeComponent
+    CulinaryRecipeComponent,
+    CulinaryRecipeItemTextComponent,
+    CulinaryRecipeItemImageComponent,
+    CulinaryRecipeItemDetailsComponent,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,

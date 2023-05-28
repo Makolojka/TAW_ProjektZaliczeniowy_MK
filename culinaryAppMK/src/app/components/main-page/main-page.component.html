@@ -1,4 +1,4 @@
 <div *ngFor="let item of items$">
-  <culinary-recipe>
+  <culinary-recipe [image]="item.image" [text]="item.text" [id]="item.id">
   </culinary-recipe>
 </div>
