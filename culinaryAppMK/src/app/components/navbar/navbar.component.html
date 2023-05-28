@@ -1,15 +1,18 @@
 <mat-toolbar class="bg-green">
-  <span><mat-icon style="margin-right: 0.2em">local_dining</mat-icon>KrólewskiePrzepisy.pl</span>
-  <div class="spacer"></div>
+  <h2 class="logo">KrólewskiePrzepisy.pl</h2>
   <a class="margin-right" mat-button href="#" [routerLink]="['/']">Home</a>
   <a class="margin-right" mat-button>O autorze</a>
   <div *ngIf="authService.isLoggedIn()">
     <a class="margin-right" mat-button href="#" [routerLink]="['/userRecipes']">Przepisy użytkowników</a>
   </div>
+
+  <div class="spacer"></div>
+
   <div style="color: white" class="d-flex" *ngIf="!authService.isLoggedIn()">
     <a class="margin-right" mat-raised-button style="background-color: rgb(108, 178, 90);" href="#" [routerLink]="['/login']">Zaloguj się</a>
     <a class="margin-right" mat-raised-button style="background-color: rgb(108, 178, 90);" href="#" [routerLink]="['/signup']">Zarejestruj się</a>
   </div>
+  <a class="margin-right" mat-raised-button style="background-color: rgb(108, 178, 90);" *ngIf="authService.isLoggedIn()" (click)="signOut()">Wyloguj</a>
 
 </mat-toolbar>
 
