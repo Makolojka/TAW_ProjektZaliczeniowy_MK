@@ -5,6 +5,7 @@ import {
   CulinaryRecipeItemDetailsComponent
 } from "./components/culinary-recipe-item-details/culinary-recipe-item-details.component";
 import {UserRecipesComponent} from "./components/user-recipes/user-recipes.component";
+import {AuthGuard} from "./services/auth.guard";
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'userRecipes',
-    component: UserRecipesComponent
+    component: UserRecipesComponent,
+    canActivate: [AuthGuard]
   }
 
 ];

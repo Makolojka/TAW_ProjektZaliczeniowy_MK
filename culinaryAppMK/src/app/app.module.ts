@@ -16,6 +16,7 @@ import { SearchBarComponent } from './shared/search-bar/search-bar.component';
 import {FormsModule} from "@angular/forms";
 import { FilterTextPipe } from './pipes/filter-text.pipe';
 import { TextFormatDirective } from './directives/text-format.directive';
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TextFormatDirective } from './directives/text-format.directive';
     FormsModule
   ],
   providers: [
-    DataService
+    DataService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
