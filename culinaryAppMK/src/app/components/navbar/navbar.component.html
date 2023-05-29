@@ -5,6 +5,9 @@
   <div *ngIf="authService.isLoggedIn()">
     <a class="margin-right" mat-button href="#" [routerLink]="['/userRecipes']">Przepisy użytkowników</a>
   </div>
+  <div *ngIf="authService.isLoggedIn()">
+    <a class="margin-right" mat-button href="#" [routerLink]="['/addRecipe']">Dodaj przepis</a>
+  </div>
 
   <div class="spacer"></div>
 
