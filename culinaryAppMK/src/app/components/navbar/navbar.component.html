@@ -1,7 +1,7 @@
-<mat-toolbar class="bg-green">
+<mat-toolbar class="bg-green toolbar-fixed">
   <h2 class="logo">KrólewskiePrzepisy.pl</h2>
   <a class="margin-right" mat-button href="#" [routerLink]="['/']">Home</a>
-  <a class="margin-right" mat-button>O autorze</a>
+  <a class="margin-right" mat-button [routerLink]="['/about']">O autorze</a>
 <!--  <div *ngIf="authService.isLoggedIn()">-->
 <!--    <a class="margin-right" mat-button href="#" [routerLink]="['/userRecipes']">Przepisy użytkowników</a>-->
 <!--  </div>-->

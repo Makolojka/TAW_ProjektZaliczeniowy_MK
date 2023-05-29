@@ -29,6 +29,8 @@ import { UserRecipeAddComponent } from './components/user-recipe-add/user-recipe
 import { CulinaryRecipeItemTitleComponent } from './components/culinary-recipe-item-title/culinary-recipe-item-title.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { FoodCarouselComponent } from './components/food-carousel/food-carousel.component';
+import { AboutMeComponent } from './components/about-me/about-me.component';
+import { UserRecipeDeleteComponent } from './components/user-recipe-delete/user-recipe-delete.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { FoodCarouselComponent } from './components/food-carousel/food-carousel.
     NavbarComponent,
     UserRecipeAddComponent,
     CulinaryRecipeItemTitleComponent,
-    FoodCarouselComponent
+    FoodCarouselComponent,
+    AboutMeComponent,
+    UserRecipeDeleteComponent
   ],
   imports: [
     BrowserModule,

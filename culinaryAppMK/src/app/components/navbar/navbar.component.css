@@ -1,6 +1,6 @@
 .bg-green
 {
-  background-color: rgb(71, 161, 48);
+  background-color: rgba(71, 161, 48, 0.8);
   color: white;
 }
 
@@ -28,4 +28,12 @@
 
 ::ng-deep .customize {
   background: rgba(71, 161, 48, 1);
+}
+
+.toolbar-fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
 }

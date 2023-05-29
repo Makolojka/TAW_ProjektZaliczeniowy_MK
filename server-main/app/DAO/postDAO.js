@@ -45,10 +45,15 @@ async function createNewOrUpdate(data) {
     });
 }
 
+async function remove(id) {
+    return PostModel.deleteOne({_id: id});
+}
+
 export default {
     query: query,
     get: get,
     createNewOrUpdate: createNewOrUpdate,
+    remove: remove,
 
     model: PostModel
 };

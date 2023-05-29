@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d130689-dcfe-4dd2-851f-57d282c9dbe3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/about-me/about-me.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/about-me/about-me.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/about-me/about-me.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/about-me/about-me.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/assets/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/assets/bg2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe/culinary-recipe.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe/culinary-recipe.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/main-page/main-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/main-page/main-page.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/main-page/main-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/navbar/navbar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/user-recipes/user-recipes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/user-recipes/user-recipes.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-main/app/DAO/postDAO.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-main/app/DAO/postDAO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-main/app/REST/post.endpoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-main/app/REST/post.endpoint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-main/app/business/post.manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/server-main/app/business/post.manager.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +71,7 @@
       <workItem from="1685268477444" duration="108000" />
       <workItem from="1685268599316" duration="38000" />
       <workItem from="1685268641151" duration="8726000" />
-      <workItem from="1685344526990" duration="11181000" />
+      <workItem from="1685344526990" duration="19745000" />
     </task>
     <servers />
   </component>
