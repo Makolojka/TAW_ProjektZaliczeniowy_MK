@@ -1,0 +1,15 @@
+.card-hover
+{
+  background-color: rgb(108, 178, 90);
+  color: white;
+  transition: background-color 0.5s ease;
+}
+
+.card-hover:hover
+{
+  background-color: rgb(71, 161, 48);
+  color: white;
+  transition: background-color 0.5s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+

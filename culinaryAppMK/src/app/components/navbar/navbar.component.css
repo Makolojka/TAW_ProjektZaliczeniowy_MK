@@ -1,0 +1,31 @@
+.bg-green
+{
+  background-color: rgb(71, 161, 48);
+  color: white;
+}
+
+.spacer
+{
+  flex: 1 1 auto;
+}
+
+.margin-right
+{
+  margin-right: 1em;
+}
+
+.menu-button{
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.logo
+{
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+::ng-deep .customize {
+  background: rgba(71, 161, 48, 1);
+}

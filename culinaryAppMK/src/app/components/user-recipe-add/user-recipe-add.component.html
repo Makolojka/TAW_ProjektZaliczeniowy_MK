@@ -1,0 +1,30 @@
+<navbar></navbar>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <div class="fadeIn first">
+      <h2>Dodaj przepis</h2>
+    </div>
+
+    <form action="post" autocomplete="off" method="POST">
+      <input type="text" class="fadeIn third" name="text" id="title"
+             placeholder="Tytuł" value="" [(ngModel)]="credentials.title">
+
+      <input type="text" class="fadeIn third" name="image" id="image" placeholder="Grafika"
+             value="" [(ngModel)]="credentials.image">
+
+<!--      <input type="text" class="fadeIn third" name="text" id="text"-->
+<!--             placeholder="Opis" value="" [(ngModel)]="credentials.text">-->
+      <br><label class="fadeIn third">Opis dania</label><br>
+      <textarea class="fadeIn third" name="text" id="text"
+                value="" [(ngModel)]="credentials.text" rows="6"></textarea>
+      <br>
+      <button (click)="createPost()" name="Submit" type="submit" class="fadeIn fourth">Zatwierdź
+      </button>
+    </form>
+
+    <!--    <div id="formFooter">-->
+    <!--      <a class="underlineHover" href="#">Forgot Password?</a>-->
+    <!--    </div>-->
+  </div>
+</div>

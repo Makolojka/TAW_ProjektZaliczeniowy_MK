@@ -1,0 +1,31 @@
+<navbar></navbar>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <div class="fadeIn first">
+      <h2>Zarejestruj się</h2>
+    </div>
+
+    <form method="post" name="signup" id="signup">
+
+      <input type="email" class="fadeIn second" name="emailid" id="emailid" placeholder="Wprowadź email"
+             value="" [(ngModel)]="credentials.email">
+
+      <input type="password" class="fadeIn third" name="password" id="password"
+             placeholder="Wpisz hasło (5-15 znaków)" value="" [(ngModel)]="credentials.password">
+
+      <input type="password" class="fadeIn third" name="cpassword" id="cpassword"
+             placeholder="Powtórz hasło" value="">
+
+      <input type="text" class="fadeIn third" name="mem_name" id="mem_name" placeholder="Nazwa" value=""
+             [(ngModel)]="credentials.name">
+
+      <button (click)="create()" name="Submit" type="submit" class="fadeIn fourth">Sing Up
+      </button>
+    </form>
+
+    <!--    <div id="formFooter">-->
+    <!--      <a class="underlineHover" href="#">Forgot Password?</a>-->
+    <!--    </div>-->
+  </div>
+</div>

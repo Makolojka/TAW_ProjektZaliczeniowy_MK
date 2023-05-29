@@ -5,6 +5,10 @@ import {
   CulinaryRecipeItemDetailsComponent
 } from "./components/culinary-recipe-item-details/culinary-recipe-item-details.component";
 import {UserRecipesComponent} from "./components/user-recipes/user-recipes.component";
+import {AuthGuard} from "./services/auth.guard";
+import {LoginComponent} from "./components/login/login.component";
+import {SignupComponent} from "./components/signup/signup.component";
+import {UserRecipeAddComponent} from "./components/user-recipe-add/user-recipe-add.component";
 
 const routes: Routes = [
   {
@@ -17,7 +21,21 @@ const routes: Routes = [
   },
   {
     path: 'userRecipes',
-    component: UserRecipesComponent
+    component: UserRecipesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
+  {
+    path: 'addRecipe',
+    component: UserRecipeAddComponent,
+    canActivate: [AuthGuard]
   }
 
 ];
