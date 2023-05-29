@@ -28,6 +28,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { UserRecipeAddComponent } from './components/user-recipe-add/user-recipe-add.component';
 import { CulinaryRecipeItemTitleComponent } from './components/culinary-recipe-item-title/culinary-recipe-item-title.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { FoodCarouselComponent } from './components/food-carousel/food-carousel.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {MatMenuModule} from '@angular/material/menu';
     SignupComponent,
     NavbarComponent,
     UserRecipeAddComponent,
-    CulinaryRecipeItemTitleComponent
+    CulinaryRecipeItemTitleComponent,
+    FoodCarouselComponent
   ],
   imports: [
     BrowserModule,

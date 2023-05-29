@@ -21,7 +21,7 @@ const postEndpoint = (router) => {
         let result = await business.getPostManager().query();
         response.status(200).send(result.find(obj => obj.id === request.params.id));
     });
-
+    
 };
 export default postEndpoint;
 
