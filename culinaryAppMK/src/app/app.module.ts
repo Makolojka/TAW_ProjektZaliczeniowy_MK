@@ -25,6 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { UserRecipeAddComponent } from './components/user-recipe-add/user-recipe-add.component';
+import { CulinaryRecipeItemTitleComponent } from './components/culinary-recipe-item-title/culinary-recipe-item-title.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import {MatIconModule} from '@angular/material/icon';
     TextFormatDirective,
     LoginComponent,
     SignupComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserRecipeAddComponent,
+    CulinaryRecipeItemTitleComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [
     DataService,

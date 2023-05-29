@@ -2,12 +2,25 @@
   <h2 class="logo">KrólewskiePrzepisy.pl</h2>
   <a class="margin-right" mat-button href="#" [routerLink]="['/']">Home</a>
   <a class="margin-right" mat-button>O autorze</a>
-  <div *ngIf="authService.isLoggedIn()">
-    <a class="margin-right" mat-button href="#" [routerLink]="['/userRecipes']">Przepisy użytkowników</a>
-  </div>
-  <div *ngIf="authService.isLoggedIn()">
-    <a class="margin-right" mat-button href="#" [routerLink]="['/addRecipe']">Dodaj przepis</a>
-  </div>
+<!--  <div *ngIf="authService.isLoggedIn()">-->
+<!--    <a class="margin-right" mat-button href="#" [routerLink]="['/userRecipes']">Przepisy użytkowników</a>-->
+<!--  </div>-->
+
+  <button mat-button [matMenuTriggerFor]="menu" *ngIf="authService.isLoggedIn()">Menu</button>
+  <mat-menu #menu="matMenu" class="customize">
+    <button mat-menu-item>
+      <!--      <mat-icon>dialpad</mat-icon>-->
+      <span *ngIf="authService.isLoggedIn()">
+        <a class="margin-right menu-button" href="#" [routerLink]="['/userRecipes']">Przepisy użytkowników</a>
+      </span>
+    </button>
+    <button mat-menu-item >
+      <span *ngIf="authService.isLoggedIn()">
+        <a class="margin-right menu-button" href="#" [routerLink]="['/addRecipe']">Dodaj przepis</a>
+      </span>
+    </button>
+  </mat-menu>
+
 
   <div class="spacer"></div>
 

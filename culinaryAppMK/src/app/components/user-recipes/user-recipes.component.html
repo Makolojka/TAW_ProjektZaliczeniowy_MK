@@ -1,7 +1,10 @@
 <navbar></navbar>
+<h2>Wasze przepisy</h2>
 <search-bar (name)="getName($event)"></search-bar>
-<div *ngFor="let item of items$ | filter:filterText" >
-  <culinary-recipe [image]="item.image" [text]="item.text" [id]="item.id">
-  </culinary-recipe>
-</div>
 
+<div class="recipes">
+  <div *ngFor="let item of items$ | filter:filterText" class="spacingCard">
+    <culinary-recipe class="spacingCard" [image]="item.image" [text]="item.text" [id]="item.id" [title]="item.title">
+    </culinary-recipe>
+  </div>
+</div>

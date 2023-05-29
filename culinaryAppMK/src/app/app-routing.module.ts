@@ -8,6 +8,7 @@ import {UserRecipesComponent} from "./components/user-recipes/user-recipes.compo
 import {AuthGuard} from "./services/auth.guard";
 import {LoginComponent} from "./components/login/login.component";
 import {SignupComponent} from "./components/signup/signup.component";
+import {UserRecipeAddComponent} from "./components/user-recipe-add/user-recipe-add.component";
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'addRecipe',
+    component: UserRecipeAddComponent,
+    canActivate: [AuthGuard]
   }
 
 ];

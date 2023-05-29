@@ -26,5 +26,4 @@ export class CulinaryRecipeItemDetailsComponent {
       this.text = res['text'];
     });
   }
-
 }
