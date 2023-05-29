@@ -13,7 +13,7 @@
     </div>
     <div class="instructions">
       <h3>Sposób przygotowania</h3>
-      {{ text }}
+      <div [innerHTML]="text | stepsFormat" class="instructions-text"></div>
     </div>
   </div>
 </div>

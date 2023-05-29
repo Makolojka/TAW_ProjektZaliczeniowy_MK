@@ -31,6 +31,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { FoodCarouselComponent } from './components/food-carousel/food-carousel.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { UserRecipeDeleteComponent } from './components/user-recipe-delete/user-recipe-delete.component';
+import { StepsFormatPipe } from './pipes/steps-format.pipe';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { UserRecipeDeleteComponent } from './components/user-recipe-delete/user-
     CulinaryRecipeItemTitleComponent,
     FoodCarouselComponent,
     AboutMeComponent,
-    UserRecipeDeleteComponent
+    UserRecipeDeleteComponent,
+    StepsFormatPipe
   ],
   imports: [
     BrowserModule,
