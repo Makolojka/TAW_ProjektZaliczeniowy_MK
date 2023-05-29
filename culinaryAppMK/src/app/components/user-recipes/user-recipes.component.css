@@ -24,3 +24,48 @@ h5
 {
   margin: 15px;
 }
+
+.spacingCard {
+  position: relative;
+}
+
+.delete-overlay {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  color: white;
+  top: 25px;
+  left: 1px;
+  z-index: 1;
+  background-color: rgba(178, 90, 90, 0.8);
+  padding: 6px 16px;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.delete-overlay:hover {
+  background-color: rgba(105, 31, 31, 0.8);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.text-delete
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-overlay-text {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 26px;
+  margin: 5px;
+  transition: all 0.5s ease;
+}
+

@@ -4,6 +4,10 @@
 
 <div class="recipes">
   <div *ngFor="let item of items$ | filter:filterText" class="spacingCard">
+    <div class="delete-overlay" *ngIf="isAdmin()" (click)="deletePost(item.id)">
+      <mat-icon class="delete-overlay-text">delete</mat-icon>
+<!--      <div>Usuń</div>-->
+    </div>
     <culinary-recipe class="spacingCard" [image]="item.image" [text]="item.text" [id]="item.id" [title]="item.title">
     </culinary-recipe>
   </div>

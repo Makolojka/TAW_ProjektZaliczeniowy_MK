@@ -28,12 +28,35 @@
 
 ::ng-deep .customize {
   background: rgba(71, 161, 48, 1);
+  z-index: 999999;
 }
 
-.toolbar-fixed{
+.toolbar-fixed {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 20;
+  background-color: rgba(71, 161, 48, 0.8);
+}
+
+.menu-element
+{
+  transition: all 0.5s ease;
+  border: 0px;
+  background-color: rgba(71, 161, 48, 0.8);
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font-family: Bahnschrift;
+}
+.menu-element:hover {
+  transition: all 0.5s ease;
+  border: 0px;
+  background-color: rgba(128, 210, 105, 0.8);
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
 }
