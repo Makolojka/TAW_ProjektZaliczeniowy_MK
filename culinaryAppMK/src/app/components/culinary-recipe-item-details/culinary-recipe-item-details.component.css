@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  margin-top: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: Bahnschrift;
+}
+
+img {
+  display: flex;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  img {
+    height: 200px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  img {
+    height: 350px;
+  }
+}
+
+@media (min-width: 1025px) {
+  img {
+    height: 600px;
+  }
+}
+
+.title-container {
+  width: 100%;
+  border-top: 2px solid rgba(71, 161, 48, 0.8);
+  padding-top: 5px;
+}
+
+.title-container h2
+{
+  padding-top: 0.5em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Add other styling as needed */
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0em;
+  width: 100%;
+  border-bottom: 2px solid rgba(71, 161, 48, 0.8);
+  padding-bottom: 1em;
+}
+
+.row {
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: 5em;
+}
+
+.ingredients {
+  flex-basis: 30%;
+}
+
+.instructions {
+  flex-basis: 70%;
+}
+

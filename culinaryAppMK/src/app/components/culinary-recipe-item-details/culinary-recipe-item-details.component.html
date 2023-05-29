@@ -1,9 +1,19 @@
 <navbar></navbar>
-<div class="card" style="width: 18rem;">
-  <img [src]="image" class="card-img-top" alt="...">
-  <div class="card-body">
-    <p>
+<div class="container">
+  <div class="title-container"><h2>{{ title }}</h2></div>
+  <div class="img-container"><img [src]="image" class="" alt="..."></div>
+  <div class="row">
+    <div class="ingredients">
+      <h3>Składniki</h3>
+      <ul>
+        <li>Mix sałat 400gramMix sałat 400gramMix sałat 400gramMix sałat 400gram</li>
+        <li>Mix sałat 400gram</li>
+        <li>Mix sałat 400gram</li>
+      </ul>
+    </div>
+    <div class="instructions">
+      <h3>Sposób przygotowania</h3>
       {{ text }}
-    </p>
+    </div>
   </div>
 </div>

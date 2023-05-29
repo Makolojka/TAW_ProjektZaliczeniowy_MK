@@ -10,6 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 export class CulinaryRecipeItemDetailsComponent {
   public image: string = '';
   public text: string = '';
+  public title: string = '';
 
   constructor(private service: DataService, private route: ActivatedRoute) {
   }
@@ -24,6 +25,7 @@ export class CulinaryRecipeItemDetailsComponent {
     this.service.getById(id).subscribe((res: any) => {
       this.image = res['image'];
       this.text = res['text'];
+      this.title = res['title'];
     });
   }
 }
