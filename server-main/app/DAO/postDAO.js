@@ -7,6 +7,10 @@ const postSchema = new mongoose.Schema({
     title: {type: String},
     image: {type: String},
     text: {type: String},
+    ingredients: {type: String},
+    challenge: {type: Number},
+    foodType: {type: String},
+    timeToPrepare: {type: String},
 }, {
     collection: 'culinary_recipe'
 });

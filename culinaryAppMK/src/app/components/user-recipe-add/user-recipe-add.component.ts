@@ -13,6 +13,10 @@ export class UserRecipeAddComponent {
     image: '',
     text: '',
     title: '',
+    ingredients: '',
+    challenge: 1,
+    foodType: '',
+    timeToPrepare: '',
   };
 
   constructor(private authService: AuthService,private dataService: DataService, public router: Router) {

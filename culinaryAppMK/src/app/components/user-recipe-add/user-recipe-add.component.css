@@ -16,7 +16,7 @@ a {
 
 h2 {
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   display:inline-block;
@@ -49,6 +49,7 @@ h2 {
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
+  margin-top: 5em;
 }
 
 #formFooter {
@@ -81,7 +82,7 @@ h3
 
 /* FORM TYPOGRAPHY*/
 
-input[type=button], input[type=submit], input[type=reset], button  {
+input[type=button], input[type=submit], input[type=reset], button, input[type=number] {
   background-color: #47a130;
   border: none;
   color: white;
@@ -285,4 +286,9 @@ input[type=text]:placeholder {
 
 #icon {
   width:60%;
+}
+
+input
+{
+  margin-bottom: 1em;
 }

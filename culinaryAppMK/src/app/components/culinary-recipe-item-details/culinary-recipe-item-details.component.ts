@@ -11,6 +11,10 @@ export class CulinaryRecipeItemDetailsComponent {
   public image: string = '';
   public text: string = '';
   public title: string = '';
+  public ingredients: string = '';
+  public challenge: number = 1;
+  public foodType: string = '';
+  public timeToPrepare: string = '';
 
   constructor(private service: DataService, private route: ActivatedRoute) {
   }
@@ -26,6 +30,10 @@ export class CulinaryRecipeItemDetailsComponent {
       this.image = res['image'];
       this.text = res['text'];
       this.title = res['title'];
+      this.ingredients = res['ingredients'];
+      this.challenge = res['challenge'];
+      this.foodType = res['foodType'];
+      this.timeToPrepare = res['timeToPrepare'];
     });
   }
 }
