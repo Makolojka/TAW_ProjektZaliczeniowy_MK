@@ -36,6 +36,8 @@ import { CulinaryRecipeItemTypeComponent } from './components/culinary-recipe-it
 import { CulinaryRecipeItemPrepTimeComponent } from './components/culinary-recipe-item-prep-time/culinary-recipe-item-prep-time.component';
 import { IngredientListPipe } from './pipes/ingredient-list.pipe';
 import { UserRecipeEditComponent } from './components/user-recipe-edit/user-recipe-edit.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,8 @@ import { UserRecipeEditComponent } from './components/user-recipe-edit/user-reci
     CulinaryRecipeItemTypeComponent,
     CulinaryRecipeItemPrepTimeComponent,
     IngredientListPipe,
-    UserRecipeEditComponent
+    UserRecipeEditComponent,
+    SnackBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,8 @@ import { UserRecipeEditComponent } from './components/user-recipe-edit/user-reci
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [
     DataService,

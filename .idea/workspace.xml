@@ -2,29 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d130689-dcfe-4dd2-851f-57d282c9dbe3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-prep-time/culinary-recipe-item-prep-time.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-prep-time/culinary-recipe-item-prep-time.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-prep-time/culinary-recipe-item-prep-time.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-prep-time/culinary-recipe-item-prep-time.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-type/culinary-recipe-item-type.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-type/culinary-recipe-item-type.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-type/culinary-recipe-item-type.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-type/culinary-recipe-item-type.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/pipes/ingredient-list.pipe.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/pipes/ingredient-list.pipe.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/snack-bar/snack-bar.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/snack-bar/snack-bar.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/snack-bar/snack-bar.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/snack-bar/snack-bar.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-details/culinary-recipe-item-details.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-details/culinary-recipe-item-details.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-details/culinary-recipe-item-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-details/culinary-recipe-item-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-title/culinary-recipe-item-title.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe-item-title/culinary-recipe-item-title.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe/culinary-recipe.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe/culinary-recipe.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe/culinary-recipe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe/culinary-recipe.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe/culinary-recipe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/culinary-recipe/culinary-recipe.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/user-recipes/user-recipes.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/user-recipes/user-recipes.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/user-recipes/user-recipes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/user-recipes/user-recipes.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/user-recipes/user-recipes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/user-recipes/user-recipes.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/services/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/services/data.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/signup/signup.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/app/components/signup/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/app/components/signup/signup.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/culinaryAppMK/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/culinaryAppMK/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +68,7 @@
       <workItem from="1685382583699" duration="7291000" />
       <workItem from="1685436734237" duration="3013000" />
       <workItem from="1685447173084" duration="11728000" />
+      <workItem from="1685471576639" duration="11296000" />
     </task>
     <servers />
   </component>
