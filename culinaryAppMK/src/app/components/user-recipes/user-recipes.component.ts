@@ -10,6 +10,7 @@ import {AuthService} from "../../services/auth.service";
 export class UserRecipesComponent {
   public items$: any;
   @Input() filterText: string = '';
+  id: string = '';
 
   constructor(private service: DataService, public authService: AuthService) {
   }

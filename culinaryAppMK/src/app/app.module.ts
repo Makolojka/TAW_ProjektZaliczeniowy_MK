@@ -32,6 +32,10 @@ import { FoodCarouselComponent } from './components/food-carousel/food-carousel.
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { UserRecipeDeleteComponent } from './components/user-recipe-delete/user-recipe-delete.component';
 import { StepsFormatPipe } from './pipes/steps-format.pipe';
+import { CulinaryRecipeItemTypeComponent } from './components/culinary-recipe-item-type/culinary-recipe-item-type.component';
+import { CulinaryRecipeItemPrepTimeComponent } from './components/culinary-recipe-item-prep-time/culinary-recipe-item-prep-time.component';
+import { IngredientListPipe } from './pipes/ingredient-list.pipe';
+import { UserRecipeEditComponent } from './components/user-recipe-edit/user-recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,11 @@ import { StepsFormatPipe } from './pipes/steps-format.pipe';
     FoodCarouselComponent,
     AboutMeComponent,
     UserRecipeDeleteComponent,
-    StepsFormatPipe
+    StepsFormatPipe,
+    CulinaryRecipeItemTypeComponent,
+    CulinaryRecipeItemPrepTimeComponent,
+    IngredientListPipe,
+    UserRecipeEditComponent
   ],
   imports: [
     BrowserModule,

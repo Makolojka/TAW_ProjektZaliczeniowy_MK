@@ -4,11 +4,15 @@
 
 <div class="recipes">
   <div *ngFor="let item of items$ | filter:filterText" class="spacingCard">
-    <div class="delete-overlay" *ngIf="isAdmin()" (click)="deletePost(item.id)">
-      <mat-icon class="delete-overlay-text">delete</mat-icon>
-<!--      <div>Usuń</div>-->
+    <div *ngIf="isAdmin()">
+      <div class="delete-overlay" (click)="deletePost(item.id)">
+        <mat-icon class="delete-overlay-text">delete</mat-icon>
+      </div>
+      <div class="delete-overlay2" [routerLink]="['/editRecipe/' + item.id]">
+        <mat-icon class="delete-overlay-text">edit</mat-icon>
+      </div>
     </div>
-    <culinary-recipe class="spacingCard" [image]="item.image" [text]="item.text" [id]="item.id" [title]="item.title">
+    <culinary-recipe class="spacingCard" [timeToPrepare]="item.timeToPrepare" [foodType]="item.foodType" [image]="item.image" [text]="item.text" [id]="item.id" [title]="item.title">
     </culinary-recipe>
   </div>
 </div>

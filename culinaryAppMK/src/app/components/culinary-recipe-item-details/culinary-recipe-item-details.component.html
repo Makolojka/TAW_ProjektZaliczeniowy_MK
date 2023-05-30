@@ -1,15 +1,19 @@
 <navbar></navbar>
 <div class="container">
   <div class="title-container"><h2>{{ title }}</h2></div>
-  <div class="img-container"><img [src]="image" class="" alt="..."></div>
+  <div class="img-container"><img [src]="image" class="" alt="...">
+    <div class="row-container">
+      <div class="icons-container"><mat-icon class="icon-display">signal_cellular_alt</mat-icon>{{challenge}}</div>
+      <div class="icons-container"><mat-icon class="icon-display">fastfood</mat-icon>{{foodType}}</div>
+      <div class="icons-container"><mat-icon class="icon-display">access_time_icon</mat-icon>{{timeToPrepare}}</div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="ingredients">
       <h3>Składniki</h3>
       <ul>
-        <li>{{ingredients}}</li>
-        <li>{{challenge}}</li>
-        <li>{{foodType}}</li>
-        <li>{{timeToPrepare}}</li>
+        <li *ngFor="let ingredient of ingredients.split(';')">{{ ingredient | ingredientList }}</li>
       </ul>
     </div>
     <div class="instructions">
@@ -18,3 +22,4 @@
     </div>
   </div>
 </div>
+

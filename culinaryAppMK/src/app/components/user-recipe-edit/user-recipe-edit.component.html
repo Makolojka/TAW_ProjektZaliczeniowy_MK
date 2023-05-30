@@ -1,0 +1,43 @@
+<navbar></navbar>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <div class="fadeIn first">
+      <h2>Edytuj przepis</h2>
+    </div>
+
+    <form action="post" autocomplete="off" method="POST">
+      <br><label class="fadeIn third">Tytuł</label><br>
+      <input type="text" class="fadeIn third" name="title" id="title" placeholder="np. Sałatka meksykańska"
+             value="" [(ngModel)]="credentials.title"><br>
+
+      <br><label class="fadeIn third">Grafika</label><br>
+      <input type="text" class="fadeIn third" name="image" id="image" placeholder="url do grafiki"
+             value="" [(ngModel)]="credentials.image"><br>
+
+      <br><label class="fadeIn third">Składniki</label><br>
+      <input type="text" class="fadeIn third" name="ingredients" id="ingredients" placeholder="np. mieszanka sałat 400g; plaster kurczaka 2 plastry;"
+             value="" [(ngModel)]="credentials.ingredients"><br>
+
+      <br><label class="fadeIn third">Trudność wykonania(1-3)</label><br>
+      <input type="number" class="fadeIn third" name="challenge" id="challenge" placeholder="np. 1"
+             value="" [(ngModel)]="credentials.challenge" min="1" max="3">
+
+      <br><label class="fadeIn third">Typ dania</label><br>
+      <input type="text" class="fadeIn third" name="foodType" id="foodType" placeholder="np. Śniadanie"
+             value="" [(ngModel)]="credentials.foodType"><br>
+
+      <br><label class="fadeIn third">Czas przygotowania</label><br>
+      <input type="text" class="fadeIn third" name="timeToPrepare" id="timeToPrepare" placeholder="np. 15 min."
+             value="" [(ngModel)]="credentials.timeToPrepare"><br>
+
+      <br><label class="fadeIn third">Opis dania</label><br>
+      <textarea class="fadeIn third" name="text" id="text"
+                value="" [(ngModel)]="credentials.text" rows="6"></textarea>
+      <br>
+      <button (click)="updatePost()" name="Submit" type="submit" class="fadeIn fourth">Zatwierdź
+      </button>
+    </form>
+
+  </div>
+</div>

@@ -25,4 +25,8 @@ export class DataService {
   deletePost(id: string) {
     return this.http.delete(this.url + '/api/post/' + id);
   }
+
+  updatePost(credentials: any) {
+    return this.http.put(this.url + '/api/post', credentials);
+  }
 }

@@ -60,6 +60,7 @@ img {
 .img-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin: 1em 0em;
   width: 100%;
   border-bottom: 2px solid rgba(71, 161, 48, 0.8);
@@ -70,6 +71,16 @@ img {
   display: flex;
   margin-top: 1em;
   margin-bottom: 5em;
+}
+
+.row-container {
+  display: flex;
+  flex-wrap: wrap;
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  flex-direction: row;
+  font-family: Bahnschrift;
+  margin-top: 1em;
 }
 
 .ingredients {
@@ -88,4 +99,41 @@ img {
 .instructions-text
 {
   margin-left: 1em;
+}
+
+ul {
+  font-family: Bahnschrift;
+  list-style: none;
+  margin: 0.5em;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+li:after {
+   content: '';
+   height: .4em;
+   width: .4em;
+   background: rgb(71, 161, 48);
+   display: block;
+   position: absolute;
+   transform: rotate(45deg);
+   top: .25em;
+   left: 0;
+ }
+
+.icons-container
+{
+  margin-right: 1.5em;
+  font-size: 16px;
+}
+
+.icon-display {
+  transform: scale(1.2);
+  margin-right: 0.5em;
 }
