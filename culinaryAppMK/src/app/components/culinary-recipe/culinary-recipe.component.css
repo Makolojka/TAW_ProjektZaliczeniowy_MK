@@ -30,3 +30,8 @@
   border-bottom: 1px solid #f1c900;
   margin-bottom: 1em;
 }
+
+.card-title-container
+{
+  height: 70px;
+}

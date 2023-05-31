@@ -18,4 +18,6 @@ export class CulinaryRecipeComponent {
   ngOnInit(): void {
   }
 
+
+
 }
