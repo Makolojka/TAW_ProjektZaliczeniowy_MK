@@ -85,6 +85,7 @@ img {
 
 .ingredients {
   flex-basis: 30%;
+  min-width: 30%;
 }
 
 .row h3
@@ -94,6 +95,7 @@ img {
 
 .instructions {
   flex-basis: 70%;
+  min-width: 70%;
 }
 
 .instructions-text

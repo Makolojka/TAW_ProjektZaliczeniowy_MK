@@ -38,6 +38,7 @@ import { IngredientListPipe } from './pipes/ingredient-list.pipe';
 import { UserRecipeEditComponent } from './components/user-recipe-edit/user-recipe-edit.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
+import { RequiredInputsDirective } from './directives/required-inputs.directive';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
     IngredientListPipe,
     UserRecipeEditComponent,
     SnackBarComponent,
+    RequiredInputsDirective,
   ],
   imports: [
     BrowserModule,

@@ -35,8 +35,9 @@
       <textarea class="fadeIn third" name="text" id="text"
                 value="" [(ngModel)]="credentials.text" rows="6"></textarea>
       <br>
-      <button (click)="updatePost()" name="Submit" type="submit" class="fadeIn fourth">Zatwierdź
-      </button>
+<!--      <button (click)="updatePost()" name="Submit" type="submit" class="fadeIn fourth">Zatwierdź-->
+<!--      </button>-->
+      <button RequiredInputs name="Submit" type="button" class="fadeIn fourth" recipeId="{{recipeId}}">Zatwierdź</button>
     </form>
 
   </div>
