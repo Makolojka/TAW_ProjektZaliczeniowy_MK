@@ -92,3 +92,97 @@ h5
   transition: all 0.5s ease;
 }
 
+/*.type-container*/
+/*{*/
+/*  display: flex;*/
+/*  flex-wrap: wrap;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.type-filter*/
+/*{*/
+/*  margin: 1em 2em;*/
+/*}*/
+
+
+.type-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  margin-top: 2em;
+}
+
+.type-filter {
+  margin: 0 0.5em;
+  font-family: Bahnschrift;
+}
+
+.type-filter button {
+  width: 125px;
+  border-radius: 5px;
+  padding: 8px;
+  border: 1px solid rgba(108, 178, 90, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s ease;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://www.maczfit.pl/blog/wp-content/uploads/2021/03/fast_food-960x639.jpeg') no-repeat center;
+  background-size: cover;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.type-filter.button-breakfast button {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://szefsmaku.pl/wp-content/uploads/2019/02/sniadanie-to-podstawa.jpg') no-repeat center;
+  background-size: cover;
+  color: #fff; /* Set the text color */
+}
+
+.type-filter.button-lunch button {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://akademiasmaku.pl/upload/vademecums/850/big/jak-skomponowac-zdrowy-lunch-box-850.jpg') no-repeat center;
+  background-size: cover;
+  color: #fff;
+}
+
+.type-filter.button-supper button {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://www.dlazdrowia24.pl/wp-content/uploads/2020/01/Kolacja-w-mniej-ni%C5%BC-10-minut.jpg') no-repeat center;
+  background-size: cover;
+  color: #fff;
+}
+
+.type-filter.button-dessert button {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('https://w0.peakpx.com/wallpaper/918/141/HD-wallpaper-cookies-desser-food-chocolate.jpg') no-repeat center;
+  background-size: cover;
+  color: #fff;
+}
+
+
+
+.type-filter button:hover {
+  filter: brightness(120%);
+  /*opacity: 1.5;*/
+  transition: all 0.5s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.type-filter button.active {
+  background-color: #ccc;
+  font-weight: bold;
+}
+
+.shadow{
+  margin: 0;
+  font-family: Bahnschrift;
+  font-weight: normal;
+  font-size: 18px;
+  color: white;
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 1), 0 0 2px rgba(0, 0, 0, 1);
+}

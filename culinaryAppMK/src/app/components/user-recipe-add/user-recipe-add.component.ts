@@ -25,12 +25,13 @@ export class UserRecipeAddComponent {
   ngOnInit() {
   }
 
-  createPost() {
-    if(this.authService.isLoggedIn()) {
-      this.dataService.createPost(this.credentials).subscribe((result) => {
-        return result;
-      });
-      this.router.navigate(['/']);
-    }
-  }
+  //Moved to required-inputs.directive
+  // createPost() {
+  //   if(this.authService.isLoggedIn()) {
+  //     this.dataService.createPost(this.credentials).subscribe((result) => {
+  //       return result;
+  //     });
+  //     this.router.navigate(['/userRecipes']);
+  //   }
+  // }
 }

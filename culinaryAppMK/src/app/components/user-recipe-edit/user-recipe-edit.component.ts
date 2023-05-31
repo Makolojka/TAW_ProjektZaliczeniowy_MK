@@ -38,13 +38,14 @@ export class UserRecipeEditComponent {
     });
   }
 
-  updatePost() {
-    if(this.authService.isLoggedIn()) {
-      this.dataService.updatePost(this.credentials).subscribe((result) => {
-        return result;
-      });
-      this.router.navigate(['/']);
-    }
-  }
+  //Moved to required-inputs.directive
+  // updatePost() {
+  //   if(this.authService.isLoggedIn()) {
+  //     this.dataService.updatePost(this.credentials).subscribe((result) => {
+  //       return result;
+  //     });
+  //     this.router.navigate(['/userRecipes']);
+  //   }
+  // }
 
 }

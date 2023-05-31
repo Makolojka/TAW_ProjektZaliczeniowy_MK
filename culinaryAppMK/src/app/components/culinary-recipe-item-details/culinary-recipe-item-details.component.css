@@ -131,11 +131,19 @@ li:after {
 
 .icons-container
 {
+  display: flex;
   margin-right: 1.5em;
   font-size: 16px;
+  flex-direction: row;
 }
 
 .icon-display {
   transform: scale(1.2);
+  margin-right: 0.5em;
+}
+
+.icon-display-challenge {
+  width: 24px;
+  height: 24px;
   margin-right: 0.5em;
 }

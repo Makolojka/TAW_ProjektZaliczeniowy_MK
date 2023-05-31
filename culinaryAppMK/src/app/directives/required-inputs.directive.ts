@@ -58,11 +58,11 @@ export class RequiredInputsDirective {
 
         if (isCreateForm) {
           this.dataService.createPost(credentials).subscribe((result) => {
-            this.router.navigate(['/']);
+            this.router.navigate(['/userRecipes']);
           });
         } else {
           this.dataService.updatePost(credentials).subscribe((result) => {
-            this.router.navigate(['/']);
+            this.router.navigate(['/userRecipes']);
           });
         }
       }

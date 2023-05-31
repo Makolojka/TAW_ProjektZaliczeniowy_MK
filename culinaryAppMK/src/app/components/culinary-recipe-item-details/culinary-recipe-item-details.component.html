@@ -3,7 +3,14 @@
   <div class="title-container"><h2>{{ title }}</h2></div>
   <div class="img-container"><img [src]="image" class="" alt="...">
     <div class="row-container">
-      <div class="icons-container"><mat-icon class="icon-display">signal_cellular_alt</mat-icon>{{challenge}}</div>
+<!--      <div class="icons-container"><mat-icon class="icon-display">signal_cellular_alt</mat-icon>{{challenge}}</div>-->
+      <div class="icons-container">
+        <img class="icon-display-challenge" src="assets/c1.png" alt="Challenge 1 icon" *ngIf="challenge === 1">
+        <img class="icon-display-challenge" src="assets/c2.png" alt="Challenge 2 icon" *ngIf="challenge === 2">
+        <img class="icon-display-challenge" src="assets/c3.png" alt="Challenge 3 icon" *ngIf="challenge === 3">
+        <div>{{ challenge }}</div>
+      </div>
+
       <div class="icons-container"><mat-icon class="icon-display">fastfood</mat-icon>{{foodType}}</div>
       <div class="icons-container"><mat-icon class="icon-display">access_time_icon</mat-icon>{{timeToPrepare}}</div>
     </div>
