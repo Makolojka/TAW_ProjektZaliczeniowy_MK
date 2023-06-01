@@ -4,6 +4,7 @@ import mongoConverter from '../service/mongoConverter';
 import * as _ from "lodash";
 
 const postSchema = new mongoose.Schema({
+    userId: {type: String},
     title: {type: String},
     image: {type: String},
     text: {type: String},

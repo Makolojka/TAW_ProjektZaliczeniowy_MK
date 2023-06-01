@@ -13,7 +13,7 @@
 
 <div class="recipes">
   <div *ngFor="let item of filteredItems" class="spacingCard">
-    <div *ngIf="isAdmin()">
+    <div *ngIf="isAdmin() || item.userId === userId">
       <div class="delete-overlay" (click)="deletePost(item.id)">
         <mat-icon class="delete-overlay-text">delete</mat-icon>
       </div>

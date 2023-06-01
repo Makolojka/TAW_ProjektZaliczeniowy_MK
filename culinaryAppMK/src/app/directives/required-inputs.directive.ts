@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class RequiredInputsDirective {
   @Input() recipeId: string = '';
+  private userId = this.authService.getUserId();
 
   constructor(
     private el: ElementRef,
@@ -43,6 +44,7 @@ export class RequiredInputsDirective {
     } else {
       if (this.authService.isLoggedIn()) {
         const credentials = {
+          userId: this.userId,
           id: this.recipeId,
           image: form.querySelector('#image').value,
           text: form.querySelector('#text').value,
