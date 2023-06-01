@@ -29,6 +29,16 @@ import { UserRecipeAddComponent } from './components/user-recipe-add/user-recipe
 import { CulinaryRecipeItemTitleComponent } from './components/culinary-recipe-item-title/culinary-recipe-item-title.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { FoodCarouselComponent } from './components/food-carousel/food-carousel.component';
+import { AboutMeComponent } from './components/about-me/about-me.component';
+import { UserRecipeDeleteComponent } from './components/user-recipe-delete/user-recipe-delete.component';
+import { StepsFormatPipe } from './pipes/steps-format.pipe';
+import { CulinaryRecipeItemTypeComponent } from './components/culinary-recipe-item-type/culinary-recipe-item-type.component';
+import { CulinaryRecipeItemPrepTimeComponent } from './components/culinary-recipe-item-prep-time/culinary-recipe-item-prep-time.component';
+import { IngredientListPipe } from './pipes/ingredient-list.pipe';
+import { UserRecipeEditComponent } from './components/user-recipe-edit/user-recipe-edit.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
+import { RequiredInputsDirective } from './directives/required-inputs.directive';
 
 @NgModule({
   declarations: [
@@ -48,7 +58,16 @@ import { FoodCarouselComponent } from './components/food-carousel/food-carousel.
     NavbarComponent,
     UserRecipeAddComponent,
     CulinaryRecipeItemTitleComponent,
-    FoodCarouselComponent
+    FoodCarouselComponent,
+    AboutMeComponent,
+    UserRecipeDeleteComponent,
+    StepsFormatPipe,
+    CulinaryRecipeItemTypeComponent,
+    CulinaryRecipeItemPrepTimeComponent,
+    IngredientListPipe,
+    UserRecipeEditComponent,
+    SnackBarComponent,
+    RequiredInputsDirective,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +78,8 @@ import { FoodCarouselComponent } from './components/food-carousel/food-carousel.
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [
     DataService,

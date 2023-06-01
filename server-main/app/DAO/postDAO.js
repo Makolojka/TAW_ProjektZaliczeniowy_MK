@@ -7,6 +7,10 @@ const postSchema = new mongoose.Schema({
     title: {type: String},
     image: {type: String},
     text: {type: String},
+    ingredients: {type: String},
+    challenge: {type: Number},
+    foodType: {type: String},
+    timeToPrepare: {type: String},
 }, {
     collection: 'culinary_recipe'
 });
@@ -45,10 +49,15 @@ async function createNewOrUpdate(data) {
     });
 }
 
+async function remove(id) {
+    return PostModel.deleteOne({_id: id});
+}
+
 export default {
     query: query,
     get: get,
     createNewOrUpdate: createNewOrUpdate,
+    remove: remove,
 
     model: PostModel
 };

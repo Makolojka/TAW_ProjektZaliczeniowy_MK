@@ -1,4 +1,9 @@
 .image{
-  height: 200px;
+  height: 250px;
   object-fit: cover;
+}
+
+.image:hover
+{
+  cursor: pointer;
 }

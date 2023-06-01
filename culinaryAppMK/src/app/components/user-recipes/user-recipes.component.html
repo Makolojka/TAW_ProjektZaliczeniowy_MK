@@ -1,10 +1,27 @@
 <navbar></navbar>
-<h2>Wasze przepisy</h2>
-<search-bar (name)="getName($event)"></search-bar>
+<h2 style="margin-top: 3em;">Wasze przepisy</h2>
+<search-bar (name)="onFilterChange($event)"></search-bar>
+
+<!-- Add filter divs -->
+<div class="type-container">
+  <div class="type-filter"><button (click)="filterByFoodType('')" ><p class="shadow">Wszystko</p></button></div>
+  <div class="type-filter button-breakfast"><button (click)="filterByFoodType('Śniadanie')"><p class="shadow">Śniadanie</p></button></div>
+  <div class="type-filter button-lunch"><button (click)="filterByFoodType('Obiad')"><p class="shadow">Obiad</p></button></div>
+  <div class="type-filter button-supper"><button (click)="filterByFoodType('Kolacja')"><p class="shadow">Kolacja</p></button></div>
+  <div class="type-filter button-dessert"><button (click)="filterByFoodType('Deser')"><p class="shadow">Deser</p></button></div>
+</div>
 
 <div class="recipes">
-  <div *ngFor="let item of items$ | filter:filterText" class="spacingCard">
-    <culinary-recipe class="spacingCard" [image]="item.image" [text]="item.text" [id]="item.id" [title]="item.title">
+  <div *ngFor="let item of filteredItems" class="spacingCard">
+    <div *ngIf="isAdmin()">
+      <div class="delete-overlay" (click)="deletePost(item.id)">
+        <mat-icon class="delete-overlay-text">delete</mat-icon>
+      </div>
+      <div class="delete-overlay2" [routerLink]="['/editRecipe/' + item.id]">
+        <mat-icon class="delete-overlay-text">edit</mat-icon>
+      </div>
+    </div>
+    <culinary-recipe class="spacingCard" [timeToPrepare]="item.timeToPrepare" [foodType]="item.foodType" [image]="item.image" [text]="item.text" [id]="item.id" [title]="item.title">
     </culinary-recipe>
   </div>
 </div>

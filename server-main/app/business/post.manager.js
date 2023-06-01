@@ -2,7 +2,7 @@ import postDAO from '../DAO/postDAO';
 
 function create(context) {
     async function query() {
-        let result = postDAO.query();
+        let result = await postDAO.query();
         if (result) {
             return result;
         }
@@ -22,13 +22,21 @@ function create(context) {
         }
     }
 
+    async function deletePost(id) {
+        let result = await postDAO.remove(id);
+        if (result) {
+            return result;
+        }
+    }
+
     return {
         query: query,
         get: get,
         createNewOrUpdate: createNewOrUpdate,
+        deletePost: deletePost,
     };
 }
 
 export default {
-    create: create
+    create: create,
 };

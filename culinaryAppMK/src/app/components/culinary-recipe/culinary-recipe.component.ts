@@ -10,10 +10,14 @@ export class CulinaryRecipeComponent {
   @Input() text?: string;
   @Input() id?: number;
   @Input() title?: string;
+  @Input() foodType?: string;
+  @Input() timeToPrepare?: string;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }
