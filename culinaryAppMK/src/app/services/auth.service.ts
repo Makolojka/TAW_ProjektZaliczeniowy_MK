@@ -67,4 +67,15 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  getUserId(): string {
+    const token = this.getToken();
+    if (!token) {
+      return '';
+    }
+    const jwtHelper = new JwtHelperService();
+    const decodedToken = jwtHelper.decodeToken(token);
+
+    return decodedToken.userId;
+  }
+
 }

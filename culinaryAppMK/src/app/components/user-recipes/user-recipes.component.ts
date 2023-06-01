@@ -14,6 +14,7 @@ export class UserRecipesComponent {
   id: string = '';
   filteredItems: any[] = [];
   selectedFoodType: string | null = null;
+  public userId = this.authService.getUserId();
 
   constructor(private service: DataService, public authService: AuthService, private router: Router) {
   }
