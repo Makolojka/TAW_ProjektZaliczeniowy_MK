@@ -5,6 +5,8 @@ import Promise from 'bluebird';
 import applicationException from '../service/applicationException';
 import mongoConverter from '../service/mongoConverter';
 import uniqueValidator from 'mongoose-unique-validator';
+import PostModel from "../DAO/postDAO";
+import {ObjectId} from "mongodb";
 
 
 const userRole = {
@@ -20,7 +22,7 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: userRoles, default: userRole.user, required: false },
   active: { type: Boolean, default: true, required: false },
   isAdmin: { type: Boolean, default: false, required: false },
-  likedRecipes: {type: [String]}
+  likedRecipes: {type: [ObjectId]}
 }, {
   collection: 'user'
 });
@@ -65,6 +67,26 @@ async function get(id) {
   throw applicationException.new(applicationException.NOT_FOUND, 'User not found');
 }
 
+async function getLikedRecipes(userId) {
+  let user;
+  await UserModel.findOne({ _id: userId}).then(function (result) {
+    if (result) {
+      user = result.toObject();
+      console.log("user likedrecipes: "+user.likedRecipes);
+    }
+  });
+  if(!user){
+    console.log("!user");
+    return PostModel.model;
+  }
+  return PostModel.model.find({_id:user.likedRecipes}).then(function (result) {
+    if (result) {
+      console.log("result: "+result);
+      return mongoConverter(result);
+    }
+  });
+}
+
 async function removeById(id) {
   return await UserModel.findByIdAndRemove(id);
 }
@@ -97,5 +119,6 @@ export default {
   removeById: removeById,
   likeRecipe: likeRecipe,
   userRole: userRole,
-  model: UserModel
+  model: UserModel,
+  getLikedRecipes: getLikedRecipes,
 };

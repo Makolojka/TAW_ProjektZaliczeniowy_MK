@@ -46,4 +46,9 @@ export class DataService {
 
     return this.http.post(url, requestBody, {headers: headers});
   }
+
+  getLikedRecipes(userId: string) {
+    const url = this.url + '/api/user/likedRecipes/'+userId;
+    return this.http.get(url);
+  }
 }

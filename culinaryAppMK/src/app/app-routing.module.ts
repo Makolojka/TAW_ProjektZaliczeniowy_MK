@@ -11,6 +11,7 @@ import {SignupComponent} from "./components/signup/signup.component";
 import {UserRecipeAddComponent} from "./components/user-recipe-add/user-recipe-add.component";
 import {AboutMeComponent} from "./components/about-me/about-me.component";
 import {UserRecipeEditComponent} from "./components/user-recipe-edit/user-recipe-edit.component";
+import {UserLikedRecipesComponent} from "./components/user-liked-recipes/user-liked-recipes.component";
 
 const routes: Routes = [
   {
@@ -47,6 +48,11 @@ const routes: Routes = [
   {
     path: 'editRecipe/:id',
     component: UserRecipeEditComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'user/liked',
+    component: UserLikedRecipesComponent,
     canActivate: [AuthGuard]
   }
 

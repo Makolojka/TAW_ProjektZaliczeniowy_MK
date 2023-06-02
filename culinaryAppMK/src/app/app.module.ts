@@ -39,6 +39,7 @@ import { UserRecipeEditComponent } from './components/user-recipe-edit/user-reci
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import { RequiredInputsDirective } from './directives/required-inputs.directive';
+import { UserLikedRecipesComponent } from './components/user-liked-recipes/user-liked-recipes.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { RequiredInputsDirective } from './directives/required-inputs.directive'
     UserRecipeEditComponent,
     SnackBarComponent,
     RequiredInputsDirective,
+    UserLikedRecipesComponent,
   ],
   imports: [
     BrowserModule,

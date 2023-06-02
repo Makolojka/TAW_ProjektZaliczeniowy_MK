@@ -45,7 +45,8 @@
           </div>
         </div>
           <div class="like-overlay3" (click)="likeRecipe(item.id)">
-            <mat-icon class="delete-overlay-text">favorite</mat-icon>
+            <mat-icon class="delete-overlay-text" *ngIf="isLiked[item.id]">favorite</mat-icon>
+            <mat-icon class="delete-overlay-text" *ngIf="!isLiked[item.id]">favorite_border</mat-icon>
           </div>
         <culinary-recipe class="spacingCard" [timeToPrepare]="item.timeToPrepare" [foodType]="item.foodType" [image]="item.image" [text]="item.text" [id]="item.id" [title]="item.title">
         </culinary-recipe>

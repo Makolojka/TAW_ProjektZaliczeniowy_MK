@@ -1,57 +1,29 @@
-import {Component, Input, SimpleChanges} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {DataService} from "../../services/data.service";
 import {AuthService} from "../../services/auth.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'user-recipes',
-  templateUrl: './user-recipes.component.html',
-  styleUrls: ['./user-recipes.component.css']
+  selector: 'user-liked-recipes',
+  templateUrl: './user-liked-recipes.component.html',
+  styleUrls: ['./user-liked-recipes.component.css']
 })
-export class UserRecipesComponent {
+export class UserLikedRecipesComponent {
   public items$: any;
-  public itemsLiked$: any;
-  isLiked: { [itemId: string]: boolean } = {};
-
   @Input() filterText: string = '';
   id: string = '';
   filteredItems: any[] = [];
   selectedFoodType: string | null = null;
   public userId = this.authService.getUserId();
 
-
   constructor(private service: DataService, public authService: AuthService, private router: Router) {
-  }
-
-  getAll() {
-    this.service.getAll().subscribe(response => {
-      this.items$ = response;
-      this.filteredItems = this.items$;
-    });
   }
 
   getLiked() {
     this.service.getLikedRecipes(this.userId).subscribe(response => {
-      this.itemsLiked$ = response;
-      this.updateLikedStatus();
+      this.items$ = response;
+      this.filteredItems = this.items$;
     });
-  }
-
-  updateLikedStatus() {
-    this.isLiked = {};
-
-    for (const id in this.items$) {
-      if (this.items$.hasOwnProperty(id)) {
-        this.isLiked[this.items$[id].id] = this.itemsLiked$.hasOwnProperty(id);
-      }
-    }
-  }
-
-  ngOnInit() {
-    this.getAll();
-    this.getLiked();
-    this.filteredItems = this.items$;
-    this.updateFilteredItems();
   }
 
   getName($event: string): void {
@@ -63,7 +35,7 @@ export class UserRecipesComponent {
     return currentUser && currentUser.isAdmin === true;
   }
 
-   deletePost(id: string) {
+  deletePost(id: string) {
     this.service.deletePost(id).subscribe(
       () => {
         console.log('Post deleted successfully');
@@ -73,6 +45,12 @@ export class UserRecipesComponent {
         console.error('Error deleting post:', error);
       }
     );
+  }
+
+  ngOnInit() {
+    this.getLiked();
+    this.filteredItems = this.items$;
+    this.updateFilteredItems();
   }
 
   filterByFoodType(foodType: string): void {

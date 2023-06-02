@@ -8,7 +8,8 @@
 
   <button mat-button [matMenuTriggerFor]="menu" *ngIf="authService.isLoggedIn()">Menu</button>
   <mat-menu #menu="matMenu" class="customize">
-    <button class="menu-element"   [routerLink]="['/userRecipes']">Przepisy użytkowników</button>
+    <button class="menu-element" [routerLink]="['/user/liked']">Ulubione przepisy</button>
+    <button class="menu-element" [routerLink]="['/userRecipes']">Przepisy użytkowników</button>
     <button class="menu-element" [routerLink]="['/addRecipe']">Dodaj przepis</button>
   </mat-menu>
 
