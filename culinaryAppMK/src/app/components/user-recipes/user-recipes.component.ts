@@ -74,4 +74,16 @@ export class UserRecipesComponent {
     this.filterText = filterText;
     this.updateFilteredItems();
   }
+
+  likeRecipe(recipeId: string): void {
+    const userId = this.authService.getUserId();
+    this.service.likeRecipe(userId, recipeId).subscribe(
+      (response) => {
+        console.log('Recipe liked successfully.');
+      },
+      (error) => {
+        console.error('Error liking recipe:', error);
+      }
+    );
+  }
 }

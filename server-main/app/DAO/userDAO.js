@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: userRoles, default: userRole.user, required: false },
   active: { type: Boolean, default: true, required: false },
   isAdmin: { type: Boolean, default: false, required: false },
+  likedRecipes: {type: [String]}
 }, {
   collection: 'user'
 });
@@ -68,12 +69,33 @@ async function removeById(id) {
   return await UserModel.findByIdAndRemove(id);
 }
 
+async function likeRecipe(userId, recipeId) {
+  try {
+    const user = await UserModel.findOne({ _id: userId });
+    const checkCollection = await UserModel.findOne({ _id: userId, likedRecipes: recipeId});
+    if (user) {
+      if(!checkCollection)
+      {
+        return UserModel.updateOne({ _id : userId }, {$push: {likedRecipes: recipeId}}, {new: true})
+      }
+      else
+      {
+        return UserModel.updateOne({ _id : userId }, {$pull: {likedRecipes: recipeId}})
+      }
+    } else {
+      throw applicationException.new(applicationException.NOT_FOUND, 'User not found');
+    }
+  } catch (error) {
+    throw error;
+  }
+}
+
 export default {
   createNewOrUpdate: createNewOrUpdate,
   getByEmailOrName: getByEmailOrName,
   get: get,
   removeById: removeById,
-
+  likeRecipe: likeRecipe,
   userRole: userRole,
   model: UserModel
 };

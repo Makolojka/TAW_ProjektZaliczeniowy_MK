@@ -37,16 +37,16 @@ h5
   position: absolute;
   text-align: center;
   color: white;
-  top: 25px;
-  left: 0px;
+  top: 24px;
+  left: 66%;
   z-index: 1;
   background-color: rgba(178, 90, 90, 0.8);
   padding: 6px 16px;
-  width: 50%;
+  width: 34%;
   transition: all 0.5s ease;
 }
 
-.delete-overlay2 {
+.edit-overlay2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -54,12 +54,29 @@ h5
   position: absolute;
   text-align: center;
   color: white;
-  top: 25px;
-  right: 0px; /* Updated from left: 0px; */
+  top: 24px;
+  left: 33%; /* Updated from left: 0px; */
   z-index: 1;
   background-color: rgba(108, 178, 90, 0.8);
   padding: 6px 16px;
-  width: 50%;
+  width: 33%;
+  transition: all 0.5s ease;
+}
+
+.like-overlay3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  color: white;
+  top: 24px;
+  left: 0px;
+  z-index: 1;
+  background-color: rgba(236, 51, 125, 0.8);
+  padding: 6px 16px;
+  width: 33%;
   transition: all 0.5s ease;
 }
 
@@ -69,10 +86,23 @@ h5
   cursor: pointer;
 }
 
-.delete-overlay2:hover {
+.edit-overlay2:hover {
   background-color: rgba(0, 91, 14, 0.8);
   transition: all 0.5s ease;
   cursor: pointer;
+}
+
+.like-overlay3:hover {
+  background-color: rgba(141, 22, 72, 0.8);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.container-row {
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  left: 0;
 }
 
 .text-delete
@@ -163,7 +193,6 @@ h5
   background-size: cover;
   color: #fff;
 }
-
 
 
 .type-filter button:hover {

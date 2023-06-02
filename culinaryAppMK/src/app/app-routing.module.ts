@@ -19,7 +19,8 @@ const routes: Routes = [
   },
   {
     path: 'recipe/detail/:id',
-    component: CulinaryRecipeItemDetailsComponent
+    component: CulinaryRecipeItemDetailsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'userRecipes',
