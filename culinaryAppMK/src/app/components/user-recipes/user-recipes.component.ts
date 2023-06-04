@@ -18,7 +18,8 @@ export class UserRecipesComponent {
   filteredItems: any[] = [];
   selectedFoodType: string | null = null;
   public userId = this.authService.getUserId();
-
+  public isAnyLikedEmpty: boolean = false;
+  public isAnyFilteredEmpty: boolean = false;
 
   constructor(private service: DataService, public authService: AuthService, private router: Router) {
   }
@@ -27,6 +28,7 @@ export class UserRecipesComponent {
     this.service.getAll().subscribe(response => {
       this.items$ = response;
       this.filteredItems = this.items$;
+      this.isAnyLiked(this.items$);
     });
   }
 
@@ -89,6 +91,13 @@ export class UserRecipesComponent {
         return titleMatches && foodTypeMatches;
       });
     }
+    if (this.filteredItems != undefined){
+      if (this.filteredItems.length === 0) {
+        this.isAnyFilteredEmpty = true;
+      } else {
+        this.isAnyFilteredEmpty = false;
+      }
+    }
   }
 
   onFilterChange(filterText: string): void {
@@ -97,7 +106,7 @@ export class UserRecipesComponent {
   }
 
   likeRecipe(recipeId: string): void {
-    console.log("recipeId:"+recipeId);
+    // console.log("recipeId:"+recipeId);
     // console.log("filteredItems:"+JSON.stringify(this.filteredItems));
     const userId = this.authService.getUserId();
     this.service.likeRecipe(userId, recipeId).subscribe(
@@ -110,4 +119,17 @@ export class UserRecipesComponent {
       }
     );
   }
+
+  isAnyLiked(items$: any): void{
+    // console.log(items$);
+    if(items$.length === 0)
+    {
+      this.isAnyLikedEmpty = true;
+    }
+    else {
+      this.isAnyLikedEmpty = false;
+    }
+  }
+
+
 }

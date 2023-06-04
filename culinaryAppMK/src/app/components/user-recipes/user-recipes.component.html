@@ -34,9 +34,12 @@
 <!--    </div>-->
 
 <div class="recipes">
-<!--  <div *ngIf="filteredItems.length === 0">-->
-<!--    <h5>Wygląda na to, że nie mamy tu żadnych przepisów :(</h5>-->
-<!--  </div>-->
+  <div *ngIf="isAnyLikedEmpty">
+    <h5>Ups, brak przepisów.</h5>
+  </div>
+  <div *ngIf="isAnyFilteredEmpty">
+    <h5>Nie mamy na razie żadnych przepisów z tej kategorii.</h5>
+  </div>
   <div *ngFor="let item of filteredItems" class="spacingCard">
 <!--    <div *ngIf="!isFilteredItemsEmpty">-->
 <!--      <h5>Wygląda na to, że nie ma tu żadnych przepisów :(</h5>-->

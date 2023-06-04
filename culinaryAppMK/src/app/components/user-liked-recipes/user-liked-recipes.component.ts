@@ -57,7 +57,7 @@ export class UserLikedRecipesComponent {
   }
 
   isAnyLiked(items$: any): void{
-    console.log(items$);
+    // console.log(items$);
     if(items$.length === 0)
     {
       this.isAnyLikedEmpty = true;
@@ -82,12 +82,14 @@ export class UserLikedRecipesComponent {
         return titleMatches && foodTypeMatches;
       });
     }
-    if (this.filteredItems.length === 0) {
-      this.isAnyFilteredEmpty = true;
-    }
-    else
-    {
-      this.isAnyFilteredEmpty = false;
+    if (this.filteredItems != undefined){
+      if (this.filteredItems.length === 0) {
+        this.isAnyFilteredEmpty = true;
+      }
+      else
+      {
+        this.isAnyFilteredEmpty = false;
+      }
     }
   }
 
