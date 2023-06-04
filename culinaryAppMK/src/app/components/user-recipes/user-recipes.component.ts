@@ -39,12 +39,11 @@ export class UserRecipesComponent {
 
   updateLikedStatus() {
     this.isLiked = {};
-
-    for (const id in this.items$) {
-      if (this.items$.hasOwnProperty(id)) {
-        this.isLiked[this.items$[id].id] = this.itemsLiked$.hasOwnProperty(id);
-      }
-    }
+    this.items$.forEach((item: any) => {
+      this.isLiked[item.id] = this.itemsLiked$.map((likedItem: any) => likedItem.id).includes(item.id);
+      // console.log("isLiked[item.id]: " + this.isLiked[item.id]);
+    });
+    // console.log("isLiked: " + JSON.stringify(this.isLiked));
   }
 
   ngOnInit() {
@@ -99,6 +98,7 @@ export class UserRecipesComponent {
 
   likeRecipe(recipeId: string): void {
     console.log("recipeId:"+recipeId);
+    // console.log("filteredItems:"+JSON.stringify(this.filteredItems));
     const userId = this.authService.getUserId();
     this.service.likeRecipe(userId, recipeId).subscribe(
       (response) => {

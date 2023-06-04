@@ -15,6 +15,8 @@ export class UserLikedRecipesComponent {
   filteredItems: any[] = [];
   selectedFoodType: string | null = null;
   public userId = this.authService.getUserId();
+  public isAnyLikedEmpty: boolean = false;
+  public isAnyFilteredEmpty: boolean = false;
 
   constructor(private service: DataService, public authService: AuthService, private router: Router) {
   }
@@ -23,6 +25,7 @@ export class UserLikedRecipesComponent {
     this.service.getLikedRecipes(this.userId).subscribe(response => {
       this.items$ = response;
       this.filteredItems = this.items$;
+      this.isAnyLiked(this.items$);
     });
   }
 
@@ -53,6 +56,17 @@ export class UserLikedRecipesComponent {
     this.updateFilteredItems();
   }
 
+  isAnyLiked(items$: any): void{
+    console.log(items$);
+    if(items$.length === 0)
+    {
+      this.isAnyLikedEmpty = true;
+    }
+    else {
+      this.isAnyLikedEmpty = false;
+    }
+  }
+
   filterByFoodType(foodType: string): void {
     this.selectedFoodType = foodType;
     this.updateFilteredItems();
@@ -67,6 +81,13 @@ export class UserLikedRecipesComponent {
         const foodTypeMatches = !this.selectedFoodType || item.foodType === this.selectedFoodType;
         return titleMatches && foodTypeMatches;
       });
+    }
+    if (this.filteredItems.length === 0) {
+      this.isAnyFilteredEmpty = true;
+    }
+    else
+    {
+      this.isAnyFilteredEmpty = false;
     }
   }
 
