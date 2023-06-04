@@ -11,6 +11,9 @@
 </div>
 
 <div class="recipes">
+  <div *ngIf="filteredItems.length === 0">
+    <h5>Wygląda na to, że nie polubiłeś/łaś jeszcze żadnego przepisu.</h5>
+  </div>
   <div *ngFor="let item of filteredItems" class="spacingCard">
     <div *ngIf="isAdmin() || item.userId === userId">
       <div class="container-row">

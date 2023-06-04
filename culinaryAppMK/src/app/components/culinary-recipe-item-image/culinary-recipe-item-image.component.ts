@@ -7,4 +7,10 @@ import {Component, Input} from '@angular/core';
 })
 export class CulinaryRecipeItemImageComponent {
   @Input() image?: string;
+  fallbackImage = 'https://www.maczfit.pl/blog/wp-content/uploads/2021/03/fast_food-960x639.jpeg';
+
+  //Secure for incorrect image url
+  handleImageError() {
+    this.image = this.fallbackImage;
+  }
 }

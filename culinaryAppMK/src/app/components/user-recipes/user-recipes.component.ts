@@ -98,6 +98,7 @@ export class UserRecipesComponent {
   }
 
   likeRecipe(recipeId: string): void {
+    console.log("recipeId:"+recipeId);
     const userId = this.authService.getUserId();
     this.service.likeRecipe(userId, recipeId).subscribe(
       (response) => {
