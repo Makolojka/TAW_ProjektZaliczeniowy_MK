@@ -1,18 +1,15 @@
-import {Component, Input, SimpleChanges} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {DataService} from "../../services/data.service";
 import {AuthService} from "../../services/auth.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'user-recipes',
-  templateUrl: './user-recipes.component.html',
-  styleUrls: ['./user-recipes.component.css']
+  selector: 'user-liked-recipes',
+  templateUrl: './user-liked-recipes.component.html',
+  styleUrls: ['./user-liked-recipes.component.css']
 })
-export class UserRecipesComponent {
+export class UserLikedRecipesComponent {
   public items$: any;
-  public itemsLiked$: any;
-  isLiked: { [itemId: string]: boolean } = {};
-
   @Input() filterText: string = '';
   id: string = '';
   filteredItems: any[] = [];
@@ -24,35 +21,12 @@ export class UserRecipesComponent {
   constructor(private service: DataService, public authService: AuthService, private router: Router) {
   }
 
-  getAll() {
-    this.service.getAll().subscribe(response => {
+  getLiked() {
+    this.service.getLikedRecipes(this.userId).subscribe(response => {
       this.items$ = response;
       this.filteredItems = this.items$;
       this.isAnyLiked(this.items$);
     });
-  }
-
-  getLiked() {
-    this.service.getLikedRecipes(this.userId).subscribe(response => {
-      this.itemsLiked$ = response;
-      this.updateLikedStatus();
-    });
-  }
-
-  updateLikedStatus() {
-    this.isLiked = {};
-    this.items$.forEach((item: any) => {
-      this.isLiked[item.id] = this.itemsLiked$.map((likedItem: any) => likedItem.id).includes(item.id);
-      // console.log("isLiked[item.id]: " + this.isLiked[item.id]);
-    });
-    // console.log("isLiked: " + JSON.stringify(this.isLiked));
-  }
-
-  ngOnInit() {
-    this.getAll();
-    this.getLiked();
-    this.filteredItems = this.items$;
-    this.updateFilteredItems();
   }
 
   getName($event: string): void {
@@ -64,7 +38,7 @@ export class UserRecipesComponent {
     return currentUser && currentUser.isAdmin === true;
   }
 
-   deletePost(id: string) {
+  deletePost(id: string) {
     this.service.deletePost(id).subscribe(
       () => {
         console.log('Post deleted successfully');
@@ -74,6 +48,23 @@ export class UserRecipesComponent {
         console.error('Error deleting post:', error);
       }
     );
+  }
+
+  ngOnInit() {
+    this.getLiked();
+    this.filteredItems = this.items$;
+    this.updateFilteredItems();
+  }
+
+  isAnyLiked(items$: any): void{
+    // console.log(items$);
+    if(items$.length === 0)
+    {
+      this.isAnyLikedEmpty = true;
+    }
+    else {
+      this.isAnyLikedEmpty = false;
+    }
   }
 
   filterByFoodType(foodType: string): void {
@@ -94,7 +85,9 @@ export class UserRecipesComponent {
     if (this.filteredItems != undefined){
       if (this.filteredItems.length === 0) {
         this.isAnyFilteredEmpty = true;
-      } else {
+      }
+      else
+      {
         this.isAnyFilteredEmpty = false;
       }
     }
@@ -106,8 +99,6 @@ export class UserRecipesComponent {
   }
 
   likeRecipe(recipeId: string): void {
-    // console.log("recipeId:"+recipeId);
-    // console.log("filteredItems:"+JSON.stringify(this.filteredItems));
     const userId = this.authService.getUserId();
     this.service.likeRecipe(userId, recipeId).subscribe(
       (response) => {
@@ -119,17 +110,4 @@ export class UserRecipesComponent {
       }
     );
   }
-
-  isAnyLiked(items$: any): void{
-    // console.log(items$);
-    if(items$.length === 0)
-    {
-      this.isAnyLikedEmpty = true;
-    }
-    else {
-      this.isAnyLikedEmpty = false;
-    }
-  }
-
-
 }

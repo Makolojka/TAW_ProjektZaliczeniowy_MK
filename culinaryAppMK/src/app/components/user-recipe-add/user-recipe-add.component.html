@@ -23,9 +23,15 @@
       <input type="number" class="fadeIn third" name="challenge" id="challenge" placeholder="np. 1"
              value="" [(ngModel)]="credentials.challenge" min="1" max="3">
 
+<!--      <br><label class="fadeIn third">Typ dania</label><br>-->
+<!--      <input type="text" class="fadeIn third" name="foodType" id="foodType" placeholder="np. Śniadanie"-->
+<!--             value="" [(ngModel)]="credentials.foodType"><br>-->
+
       <br><label class="fadeIn third">Typ dania</label><br>
-      <input type="text" class="fadeIn third" name="foodType" id="foodType" placeholder="np. Śniadanie"
-             value="" [(ngModel)]="credentials.foodType"><br>
+      <select class="fadeIn third" name="foodType" id="foodType" [(ngModel)]="credentials.foodType">
+        <option value="">-- Wybierz typ dania --</option>
+        <option *ngFor="let type of foodTypes" [value]="type">{{ type }}</option>
+      </select><br>
 
       <br><label class="fadeIn third">Czas przygotowania</label><br>
       <input type="text" class="fadeIn third" name="timeToPrepare" id="timeToPrepare" placeholder="np. 15 min."
