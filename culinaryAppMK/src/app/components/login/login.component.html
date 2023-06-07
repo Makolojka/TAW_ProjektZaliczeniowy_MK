@@ -3,23 +3,27 @@
   <div id="formContent">
 
     <div class="fadeIn first">
-        <h2>Zaloguj się</h2>
+      <h2>Logowanie</h2>
     </div>
 
     <form action="post" autocomplete="off" method="POST">
       <input [(ngModel)]="credentials.login" type="text" class="fadeIn second"
              name="username" placeholder="Nazwa" title="Login">
 
+      <div *ngIf="isFormSubmitted && !credentials.login" class="error">Pole jest puste</div>
+
       <input [(ngModel)]="credentials.password" type="password" class="fadeIn third"
              name="password" placeholder="Hasło" title="Password">
 
-      <button (click)="signIn()" class="fadeIn fourth" type="submit" title="Przycisk zaloguj">
-        Sign in
+      <div *ngIf="isFormSubmitted && !credentials.password" class="error">Pole jest puste</div>
+
+      <button (click)="signIn()" class="fadeIn fourth" type="button" title="Przycisk zaloguj">
+        Zaloguj się
       </button>
     </form>
 
-<!--    <div id="formFooter">-->
-<!--      <a class="underlineHover" href="#">Forgot Password?</a>-->
-<!--    </div>-->
+    <!--    <div id="formFooter">-->
+    <!--      <a class="underlineHover" href="#">Forgot Password?</a>-->
+    <!--    </div>-->
   </div>
 </div>

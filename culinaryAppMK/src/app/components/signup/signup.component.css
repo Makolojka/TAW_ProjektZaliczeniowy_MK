@@ -258,14 +258,17 @@ input[type=text]:placeholder {
   width: 100%;
 }
 
-
-
-/* OTHERS */
-
 *:focus {
   outline: none;
 }
 
 #icon {
   width:60%;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
 }

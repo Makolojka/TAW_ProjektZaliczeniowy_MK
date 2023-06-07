@@ -40,7 +40,7 @@ export class RequiredInputsDirective {
       emptyInputs.forEach((input: HTMLInputElement) => {
         input.classList.add('error');
       });
-      this.openSnackBar('Błąd:', 'Wypełnij wszystkie pola');
+      this.openSnackBar('Wypełnij wszystkie pola', '');
     } else {
       if (this.authService.isLoggedIn()) {
         const credentials = {

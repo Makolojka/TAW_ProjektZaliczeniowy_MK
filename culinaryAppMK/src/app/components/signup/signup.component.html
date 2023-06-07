@@ -2,19 +2,35 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <div class="fadeIn first">
-      <h2>Zarejestruj się</h2>
+      <h2>Rejestracja</h2>
     </div>
-    <form method="post" name="signup" id="signup" (ngSubmit)="create()">
+    <div class="form-group">
       <input type="email" class="fadeIn second" name="emailid" id="emailid" placeholder="Wprowadź email"
-             value="" [(ngModel)]="credentials.email" required>
-      <input type="password" class="fadeIn third" name="password" id="password"
-             placeholder="Wpisz hasło (5-15 znaków)" value="" [(ngModel)]="credentials.password" required>
-      <input type="password" class="fadeIn third" name="cpassword" id="cpassword"
-             placeholder="Powtórz hasło" value="" #cpasswordInput required>
-      <input type="text" class="fadeIn third" name="mem_name" id="mem_name" placeholder="Nazwa" value=""
-             [(ngModel)]="credentials.name" required>
+             [(ngModel)]="credentials.email" required>
+      <div *ngIf="isFormSubmitted && !credentials.email" class="error">Pole jest puste</div>
+    </div>
 
-      <button type="submit" class="fadeIn fourth" (click)="isFormSubmitted = true">Sing Up</button>
-    </form>
+    <div class="form-group">
+      <input type="password" class="fadeIn third" name="password" id="password"
+             placeholder="Wpisz hasło (5-15 znaków, 1 litera mała i duża oraz 1 znak specjalny)"
+             [(ngModel)]="credentials.password" required>
+      <div *ngIf="isFormSubmitted && (!credentials.password || !isStrongPassword(credentials.password))" class="error">
+        <ng-container *ngIf="!credentials.password">Pole jest puste</ng-container>
+        <ng-container *ngIf="credentials.password && !isStrongPassword(credentials.password)">Hasło jest zbyt słabe</ng-container>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input #cpasswordInput type="password" class="fadeIn third" name="cpassword" id="cpassword"
+             placeholder="Powtórz hasło" [(ngModel)]="cpassword" required>
+      <div *ngIf="isFormSubmitted && credentials.password !== cpassword" class="error">Hasła się nie zgadzają</div>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="fadeIn third" name="mem_name" id="mem_name" placeholder="Nazwa" [(ngModel)]="credentials.name" required>
+      <div *ngIf="isFormSubmitted && !credentials.name" class="error">Pole jest puste</div>
+    </div>
+
+    <button type="button" class="fadeIn fourth" (click)="submitForm()">Zarejestruj się</button>
   </div>
 </div>
