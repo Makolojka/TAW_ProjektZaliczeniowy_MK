@@ -1,0 +1,70 @@
+<mat-toolbar class="bg-green toolbar-fixed">
+  <h2 class="logo"><img src="assets/logo2.png">KrólewskiePrzepisy.pl</h2>
+  <a class="margin-right" mat-button href="#" [routerLink]="['/']">Home</a>
+  <a class="margin-right" mat-button [routerLink]="['/about']">O autorze</a>
+<!--  <div *ngIf="authService.isLoggedIn()">-->
+<!--    <a class="margin-right" mat-button href="#" [routerLink]="['/userRecipes']">Przepisy użytkowników</a>-->
+<!--  </div>-->
+
+  <button mat-button [matMenuTriggerFor]="menu" *ngIf="authService.isLoggedIn()">Menu</button>
+  <mat-menu #menu="matMenu" class="customize">
+    <button class="menu-element" [routerLink]="['/user/liked']">Ulubione przepisy</button>
+    <button class="menu-element" [routerLink]="['/userRecipes']">Przepisy użytkowników</button>
+    <button class="menu-element" [routerLink]="['/addRecipe']">Dodaj przepis</button>
+  </mat-menu>
+
+<!--  <mat-menu #menu="matMenu" class="customize">-->
+<!--    <button mat-menu-item>-->
+<!--            <mat-icon>dialpad</mat-icon>-->
+<!--      <span *ngIf="authService.isLoggedIn()">-->
+<!--        <a class="margin-right menu-button" [routerLink]="['/userRecipes']">Przepisy użytkowników</a>-->
+<!--      </span>-->
+<!--    </button>-->
+<!--    <button mat-menu-item>-->
+<!--      <span *ngIf="authService.isLoggedIn()">-->
+<!--        <a class="margin-right menu-button" [routerLink]="['/addRecipe']">Dodaj przepis</a>-->
+<!--      </span>-->
+<!--    </button>-->
+<!--  </mat-menu>-->
+
+
+  <div class="spacer"></div>
+
+  <div style="color: white" class="d-flex" *ngIf="!authService.isLoggedIn()">
+    <a class="margin-right" mat-raised-button style="background-color: rgb(108, 178, 90);" href="#" [routerLink]="['/login']">Zaloguj się</a>
+    <a class="margin-right" mat-raised-button style="background-color: rgb(108, 178, 90);" href="#" [routerLink]="['/signup']">Zarejestruj się</a>
+  </div>
+  <a class="margin-right" mat-raised-button style="background-color: rgb(108, 178, 90);" *ngIf="authService.isLoggedIn()" (click)="signOut()">Wyloguj</a>
+
+</mat-toolbar>
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--  <div class="container-fluid">-->
+<!--    <a class="navbar-brand" href="#">Title</a>-->
+<!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"-->
+<!--            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--      <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/']">Home</a>-->
+<!--        </li>-->
+<!--        <li *ngIf="authService.isLoggedIn()" class="nav-item">-->
+<!--          <a class="nav-link" href="#" [routerLink]="['/blog']">Blog</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="#">Add post</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--      <div class="d-flex">-->
+<!--        <div class="d-flex" *ngIf="!authService.isLoggedIn()">-->
+<!--          <a class="nav-link" href="#" [routerLink]="['/login']">Login</a>-->
+<!--          <a class="nav-link" href="#" [routerLink]="['/signup']">SignUp</a>-->
+<!--        </div>-->
+<!--        <button *ngIf="authService.isLoggedIn()" class="btn nav-link" (click)="signOut()">Wyloguj</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+

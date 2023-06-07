@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {DataService} from "./services/data.service";
 import { CulinaryRecipeComponent } from './components/culinary-recipe/culinary-recipe.component';
 import { CulinaryRecipeItemTextComponent } from './components/culinary-recipe-item-text/culinary-recipe-item-text.component';
@@ -16,6 +16,30 @@ import { SearchBarComponent } from './shared/search-bar/search-bar.component';
 import {FormsModule} from "@angular/forms";
 import { FilterTextPipe } from './pipes/filter-text.pipe';
 import { TextFormatDirective } from './directives/text-format.directive';
+import {AuthService} from "./services/auth.service";
+import {AuthInterceptor} from "./services/auth.interceptor";
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { UserRecipeAddComponent } from './components/user-recipe-add/user-recipe-add.component';
+import { CulinaryRecipeItemTitleComponent } from './components/culinary-recipe-item-title/culinary-recipe-item-title.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { FoodCarouselComponent } from './components/food-carousel/food-carousel.component';
+import { AboutMeComponent } from './components/about-me/about-me.component';
+import { UserRecipeDeleteComponent } from './components/user-recipe-delete/user-recipe-delete.component';
+import { StepsFormatPipe } from './pipes/steps-format.pipe';
+import { CulinaryRecipeItemTypeComponent } from './components/culinary-recipe-item-type/culinary-recipe-item-type.component';
+import { CulinaryRecipeItemPrepTimeComponent } from './components/culinary-recipe-item-prep-time/culinary-recipe-item-prep-time.component';
+import { IngredientListPipe } from './pipes/ingredient-list.pipe';
+import { UserRecipeEditComponent } from './components/user-recipe-edit/user-recipe-edit.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
+import { RequiredInputsDirective } from './directives/required-inputs.directive';
+import { UserLikedRecipesComponent } from './components/user-liked-recipes/user-liked-recipes.component';
 
 @NgModule({
   declarations: [
@@ -29,16 +53,45 @@ import { TextFormatDirective } from './directives/text-format.directive';
     UserRecipesComponent,
     SearchBarComponent,
     FilterTextPipe,
-    TextFormatDirective
+    TextFormatDirective,
+    LoginComponent,
+    SignupComponent,
+    NavbarComponent,
+    UserRecipeAddComponent,
+    CulinaryRecipeItemTitleComponent,
+    FoodCarouselComponent,
+    AboutMeComponent,
+    UserRecipeDeleteComponent,
+    StepsFormatPipe,
+    CulinaryRecipeItemTypeComponent,
+    CulinaryRecipeItemPrepTimeComponent,
+    IngredientListPipe,
+    UserRecipeEditComponent,
+    SnackBarComponent,
+    RequiredInputsDirective,
+    UserLikedRecipesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [
-    DataService
+    DataService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+
   ],
   bootstrap: [AppComponent]
 })

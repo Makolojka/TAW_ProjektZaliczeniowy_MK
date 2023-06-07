@@ -1,0 +1,37 @@
+.card-hover
+{
+  background-color: rgb(108, 178, 90);
+  color: white;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.card-hover:hover
+{
+  background-color: rgb(78, 180, 54);
+  color: white;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.font-main
+{
+  font-family: Bahnschrift;
+}
+
+.container-centered
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #f1c900;
+  margin-bottom: 1em;
+}
+
+.card-title-container
+{
+  height: 70px;
+}

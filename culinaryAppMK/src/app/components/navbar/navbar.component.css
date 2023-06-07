@@ -1,0 +1,75 @@
+.bg-green
+{
+  background-color: rgba(71, 161, 48, 0.8);
+  color: white;
+}
+
+.spacer
+{
+  flex: 1 1 auto;
+}
+
+.margin-right
+{
+  margin-right: 1em;
+}
+
+.menu-button{
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.logo
+{
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+::ng-deep .customize {
+  background: rgba(71, 161, 48, 1);
+  z-index: 999999;
+}
+
+.toolbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  background-color: rgba(71, 161, 48, 0.8);
+}
+
+.menu-element
+{
+  transition: all 0.5s ease;
+  border: 0px;
+  background-color: rgba(71, 161, 48, 0.8);
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font-family: Bahnschrift;
+}
+.menu-element:hover {
+  transition: all 0.5s ease;
+  border: 0px;
+  background-color: rgba(128, 210, 105, 0.8);
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
+  margin-right: 10px;
+}

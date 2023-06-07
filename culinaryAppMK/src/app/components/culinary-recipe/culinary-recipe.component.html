@@ -1,7 +1,8 @@
-<div class="card" style="width: 18rem;">
+<div class="card card-hover" style="width: 18rem; border-radius: 2px;" [routerLink]="['/recipe/detail/' + id]">
   <culinary-recipe-item-image [image]="image"></culinary-recipe-item-image>
   <div class="card-body">
-    <h5 class="card-title"></h5>
-    <culinary-recipe-item-text [text]="text" [id]="id"></culinary-recipe-item-text>
+    <div class="container-centered"><culinary-recipe-item-type [foodType]="foodType"></culinary-recipe-item-type></div>
+    <div class="card-title-container"><culinary-recipe-item-title class="card-title" [title]="title"></culinary-recipe-item-title></div>
+    <culinary-recipe-item-prep-time [timeToPrepare]="timeToPrepare"></culinary-recipe-item-prep-time>
   </div>
 </div>
