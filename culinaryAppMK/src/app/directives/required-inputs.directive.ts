@@ -59,10 +59,12 @@ export class RequiredInputsDirective {
         const isCreateForm = form.getAttribute('action') === 'post';
 
         if (isCreateForm) {
+          // console.log("Post");
           this.dataService.createPost(credentials).subscribe((result) => {
             this.router.navigate(['/userRecipes']);
           });
         } else {
+          // console.log("Put");
           this.dataService.updatePost(credentials).subscribe((result) => {
             this.router.navigate(['/userRecipes']);
           });

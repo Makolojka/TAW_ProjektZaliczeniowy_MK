@@ -40,7 +40,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 import { RequiredInputsDirective } from './directives/required-inputs.directive';
 import { UserLikedRecipesComponent } from './components/user-liked-recipes/user-liked-recipes.component';
-import { PasswordStrengthDirective } from './directives/password-strength.directive';
 
 @NgModule({
   declarations: [
@@ -71,7 +70,6 @@ import { PasswordStrengthDirective } from './directives/password-strength.direct
     SnackBarComponent,
     RequiredInputsDirective,
     UserLikedRecipesComponent,
-    PasswordStrengthDirective,
   ],
   imports: [
     BrowserModule,

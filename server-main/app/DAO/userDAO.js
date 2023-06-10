@@ -69,6 +69,7 @@ async function get(id) {
 
 async function getLikedRecipes(userId) {
   let user;
+  //Find user
   await UserModel.findOne({ _id: userId}).then(function (result) {
     if (result) {
       user = result.toObject();
@@ -79,6 +80,7 @@ async function getLikedRecipes(userId) {
     console.log("!user");
     return PostModel.model;
   }
+  //Find recipe of given likedRecipes id
   return PostModel.model.find({_id:user.likedRecipes}).then(function (result) {
     if (result) {
       console.log("result: "+result);
@@ -98,10 +100,12 @@ async function likeRecipe(userId, recipeId) {
     if (user) {
       if(!checkCollection)
       {
+        //If recipe is not liked, like it
         return UserModel.updateOne({ _id : userId }, {$push: {likedRecipes: recipeId}}, {new: true})
       }
       else
       {
+        //If recipe is liked, dislike it
         return UserModel.updateOne({ _id : userId }, {$pull: {likedRecipes: recipeId}})
       }
     } else {

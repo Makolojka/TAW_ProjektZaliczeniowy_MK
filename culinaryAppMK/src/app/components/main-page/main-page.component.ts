@@ -18,7 +18,6 @@ export class MainPageComponent implements OnInit{
   }
 
   ngOnInit() {
-    // this.getAll();
   }
 
   openSnackBar(title:string,message:string) {
@@ -36,10 +35,5 @@ export class MainPageComponent implements OnInit{
       this.router.navigate(['/userRecipes']);
     }
   }
-  // getAll(){
-  //   this.service.getAll().subscribe(response => {
-  //     this.items$ = response;
-  //   });
-  // }
 
 }

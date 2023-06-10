@@ -1,7 +1,7 @@
 <navbar></navbar>
 <div class="container">
   <div class="title-container"><h2>{{ title }}</h2></div>
-  <div class="img-container"><img [src]="image" class="" alt="...">
+  <div class="img-container"><img [src]="image" class="" alt="..." (error)="handleImageError()">
     <div class="row-container">
 <!--      <div class="icons-container"><mat-icon class="icon-display">signal_cellular_alt</mat-icon>{{challenge}}</div>-->
       <div class="icons-container">

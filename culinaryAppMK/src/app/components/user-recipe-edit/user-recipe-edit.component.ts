@@ -9,7 +9,6 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./user-recipe-edit.component.css']
 })
 export class UserRecipeEditComponent {
-  // public credentials: any;
   public credentials = {
     image: '',
     text: '',
@@ -21,7 +20,7 @@ export class UserRecipeEditComponent {
   };
   public recipeId: string = '';
 
-  constructor(private service: DataService, private route: ActivatedRoute, private authService: AuthService,private dataService: DataService, public router: Router) {
+  constructor(private service: DataService, private route: ActivatedRoute, private authService: AuthService, private dataService: DataService, public router: Router) {
   }
 
   ngOnInit() {
@@ -34,18 +33,6 @@ export class UserRecipeEditComponent {
 
     this.service.getById(id).subscribe((res: any) => {
       this.credentials = res;
-      console.log(this.credentials);
     });
   }
-
-  //Moved to required-inputs.directive
-  // updatePost() {
-  //   if(this.authService.isLoggedIn()) {
-  //     this.dataService.updatePost(this.credentials).subscribe((result) => {
-  //       return result;
-  //     });
-  //     this.router.navigate(['/userRecipes']);
-  //   }
-  // }
-
 }

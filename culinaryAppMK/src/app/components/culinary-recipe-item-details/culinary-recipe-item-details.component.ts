@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {DataService} from "../../services/data.service";
 import {ActivatedRoute} from "@angular/router";
 
@@ -15,6 +15,7 @@ export class CulinaryRecipeItemDetailsComponent {
   public challenge: number = 1;
   public foodType: string = '';
   public timeToPrepare: string = '';
+  fallbackImage = 'https://www.maczfit.pl/blog/wp-content/uploads/2021/03/fast_food-960x639.jpeg';
 
   constructor(private service: DataService, private route: ActivatedRoute) {
   }
@@ -35,5 +36,10 @@ export class CulinaryRecipeItemDetailsComponent {
       this.foodType = res['foodType'];
       this.timeToPrepare = res['timeToPrepare'];
     });
+  }
+
+  //Secure for incorrect image url
+  handleImageError() {
+    this.image = this.fallbackImage;
   }
 }
