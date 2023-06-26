@@ -103,7 +103,8 @@ export class UserLikedRecipesComponent {
     this.service.likeRecipe(userId, recipeId).subscribe(
       (response) => {
         console.log('Recipe liked successfully.');
-        location.reload();
+        // location.reload();
+        this.getLiked();
       },
       (error) => {
         console.error('Error liking recipe:', error);

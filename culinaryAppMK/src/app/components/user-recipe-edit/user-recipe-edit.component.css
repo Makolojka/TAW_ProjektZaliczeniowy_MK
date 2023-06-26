@@ -292,3 +292,13 @@ input
 {
   margin-bottom: 1em;
 }
+
+.error {
+  border: 1px solid red;
+  background-color: #ffe6e6;
+}
+
+input.error[type=text] {
+  border: 1px solid red;
+  background-color: #ffe6e6;
+}

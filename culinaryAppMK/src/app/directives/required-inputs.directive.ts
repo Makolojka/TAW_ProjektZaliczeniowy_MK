@@ -32,14 +32,25 @@ export class RequiredInputsDirective {
   onButtonClick() {
     const form = this.el.nativeElement.closest('form');
     const inputs: HTMLInputElement[] = Array.from(form.getElementsByTagName('input'));
+    const textarea: HTMLTextAreaElement = form.querySelector('textarea');
+    const select: HTMLSelectElement = form.querySelector('select');
 
-    //Finds all empty inputs
+    // Finds all empty inputs and textarea
     const emptyInputs = inputs.filter((input: HTMLInputElement) => !input.value);
+    const emptyTextarea = !textarea.value;
+    const emptySelect = !select.value;
 
-    if (emptyInputs.length > 0) {
+    if (emptyInputs.length > 0 || emptyTextarea || emptySelect) {
       emptyInputs.forEach((input: HTMLInputElement) => {
         input.classList.add('error');
       });
+      if (emptyTextarea) {
+        textarea.classList.add('error');
+      }
+      if (emptySelect) {
+        select.classList.add('error');
+      }
+
       this.openSnackBar('Wypełnij wszystkie pola', '');
     } else {
       if (this.authService.isLoggedIn()) {

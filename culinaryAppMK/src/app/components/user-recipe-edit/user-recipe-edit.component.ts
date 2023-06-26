@@ -19,6 +19,7 @@ export class UserRecipeEditComponent {
     timeToPrepare: '',
   };
   public recipeId: string = '';
+  foodTypes: string[] = ['Śniadanie', 'Obiad', 'Kolacja', 'Deser'];
 
   constructor(private service: DataService, private route: ActivatedRoute, private authService: AuthService, private dataService: DataService, public router: Router) {
   }
